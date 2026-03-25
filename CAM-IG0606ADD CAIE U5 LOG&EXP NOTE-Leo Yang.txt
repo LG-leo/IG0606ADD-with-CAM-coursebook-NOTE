@@ -1,0 +1,207 @@
+# U5 – Logarithmic and Exponential Functions
+
+## 5.1 Definitions & Basic Properties
+
+### Logarithms
+
+For \(a > 0,\ a \neq 1\) and \(x > 0\):
+\[
+y = \log_a x \quad\Longleftrightarrow\quad a^y = x
+\]
+
+- \(\log_a x\) is the **power** you raise \(a\) to get \(x\).  
+- In IGCSE 0606, \(\log_{10}x\) is often written as \(\lg x\).  
+- Natural logarithm: \(\ln x = \log_e x\), where \(e \approx 2.718\).
+
+**Common values**:  
+\(\lg 10 = 1,\quad \lg 100 = 2,\quad \ln e = 1,\quad \ln 1 = 0\)
+
+---
+
+### Exponential Functions
+
+For \(a > 0,\ a \neq 1\):
+\[
+y = a^x
+\]
+
+---
+
+## 5.2 Laws of Logarithms
+
+| Rule (in symbols) | Example |
+|------------------|---------|
+| \(\log_a (MN) = \log_a M + \log_a N\) | \(\lg(2\times5) = \lg2 + \lg5\) |
+| \(\log_a \frac{M}{N} = \log_a M - \log_a N\) | \(\lg\frac{100}{10} = \lg100 - \lg10 = 2 - 1 = 1\) |
+| \(\log_a (M^k) = k \log_a M\) | \(\lg(10^3) = 3\lg10 = 3\) |
+| \(\log_a a = 1\) | \(\lg10 = 1\) |
+| \(\log_a 1 = 0\) | \(\lg1 = 0\) |
+
+> **Note**: These rules work for any base \(a\) (\(a>0,\ a\neq1\)).  
+> “Addition” outside the log becomes multiplication inside; “subtraction” becomes division; multiplication outside becomes power inside.
+
+---
+
+## 5.3 Graphs – Exponential vs Logarithmic
+
+### Exponential \(y = a^x\)
+
+| \(a > 1\) | \(0 < a < 1\) |
+|----------|--------------|
+| Passes through \((0,1)\) | Passes through \((0,1)\) |
+| Increasing | Decreasing |
+| \(x\)-axis (\(y=0\)) is a **horizontal asymptote** | \(x\)-axis (\(y=0\)) is a **horizontal asymptote** |
+| As \(x \to -\infty,\ y \to 0^+\) | As \(x \to +\infty,\ y \to 0^+\) |
+| As \(x \to +\infty,\ y \to +\infty\) | As \(x \to -\infty,\ y \to +\infty\) |
+
+### Logarithmic \(y = \log_a x\)
+
+| \(a > 1\) | \(0 < a < 1\) |
+|----------|--------------|
+| Passes through \((1,0)\) | Passes through \((1,0)\) |
+| Increasing | Decreasing |
+| \(y\)-axis (\(x=0\)) is a **vertical asymptote** | \(y\)-axis (\(x=0\)) is a **vertical asymptote** |
+| As \(x \to 0^+,\ y \to -\infty\) | As \(x \to 0^+,\ y \to +\infty\) |
+| As \(x \to +\infty,\ y \to +\infty\) | As \(x \to +\infty,\ y \to -\infty\) |
+
+**Key symmetry**:  
+\(y = \log_a x\) and \(y = a^x\) are **inverse functions**. Their graphs are reflections of each other in the line \(y = x\).
+
+---
+
+## 5.4 Domain and Range
+
+| Function | Domain | Range |
+|----------|--------|-------|
+| \(y = a^x\) (\(a>0,\ a\neq1\)) | \(\mathbb{R}\) (all real numbers) | \(y > 0\) |
+| \(y = \log_a x\) (\(a>0,\ a\neq1\)) | \(x > 0\) | \(\mathbb{R}\) |
+
+**Important for composite functions**:
+- For \(y = \ln(ax+b)\): **inside must be positive**, i.e. \(ax+b > 0\).  
+- Example: \(f(x) = \ln(3-x)\) has domain \(3-x > 0 \Rightarrow x < 3\).
+
+---
+
+## 5.5 Solving Equations with Logs and Exponentials
+
+### 5.5.1 Exponential Equations
+
+**Method**: Take logs of both sides (usually \(\lg\) or \(\ln\)), then use the power rule.
+
+**Example**: Solve \(5^x = 65\).
+
+\[
+\begin{aligned}
+5^x &= 65 \\
+\lg(5^x) &= \lg 65 \\
+x \lg 5 &= \lg 65 \\
+x &= \frac{\lg 65}{\lg 5} \approx 2.593
+\end{aligned}
+\]
+
+### 5.5.2 Logarithmic Equations
+
+**Method**: Combine logs using the laws, then convert to exponential form. **Always check the domain** (arguments of logs must be positive).
+
+**Example**: Solve \(2\lg(4+x) = \lg(8+2x)\).
+
+\[
+\begin{aligned}
+\lg(4+x)^2 &= \lg(8+2x) \\
+(4+x)^2 &= 8+2x \\
+x^2 + 8x + 16 &= 8 + 2x \\
+x^2 + 6x + 8 &= 0 \\
+(x+2)(x+4) &= 0 \\
+x &= -2 \quad\text{or}\quad x = -4
+\end{aligned}
+\]
+
+**Check domain**:  
+\(4+x > 0 \Rightarrow x > -4\)  
+\(8+2x > 0 \Rightarrow x > -4\)  
+
+- \(x = -2\) is valid (\(-2 > -4\)) ✅  
+- \(x = -4\) is **not** valid (\(4+(-4)=0\), log undefined) ❌  
+
+**Solution**: \(x = -2\).
+
+---
+
+## 5.6 Change of Base Formula
+
+\[
+\log_a b = \frac{\log_c b}{\log_c a} \qquad (c > 0,\ c \neq 1)
+\]
+
+Commonly we use \(c = 10\) or \(c = e\):
+
+\[
+\log_a b = \frac{\lg b}{\lg a} \quad\text{or}\quad \log_a b = \frac{\ln b}{\ln a}
+\]
+
+**Special case**: \(\log_a b = \dfrac{1}{\log_b a}\) (when the two bases are swapped).
+
+---
+
+## 5.7 Transformations (Shifts)
+
+### Exponential: \(y = a^{x} + c\)  
+- Horizontal asymptote moves from \(y=0\) to \(y=c\).  
+- Example: \(y = 2^x + 3\) has asymptote \(y=3\).
+
+### Logarithmic: \(y = \log_a (x - h)\)  
+- Vertical asymptote moves from \(x=0\) to \(x=h\).  
+- Example: \(y = \ln(x-2)\) has asymptote \(x=2\).
+
+---
+
+## 5.8 A Typical “Mixed” Log Equation (from past papers)
+
+**Problem**: Solve \(\displaystyle \frac{\ln(2x+3)}{\ln 5} = 2\).
+
+**Solution**:
+
+\[
+\begin{aligned}
+\frac{\ln(2x+3)}{\ln 5} &= 2 \\
+\ln(2x+3) &= 2\ln 5 \\
+\ln(2x+3) &= \ln(5^2) \\
+2x+3 &= 25 \\
+2x &= 22 \\
+x &= 11
+\end{aligned}
+\]
+
+**Check domain**: \(2x+3 > 0 \Rightarrow 11 > -1.5\) ✅.
+
+---
+
+## 5.9 Inverse Functions
+
+For \(y = a^x\): swap \(x\) and \(y\) → \(x = a^y\) → \(y = \log_a x\).  
+So \(f(x) = a^x\) and \(f^{-1}(x) = \log_a x\) are inverses.
+
+**Example**: Find the inverse of \(f(x) = e^{2x}\).
+
+\[
+\begin{aligned}
+y &= e^{2x} \\
+x &= e^{2y} \quad\text{(swap)}\\
+\ln x &= 2y \\
+y &= \frac{1}{2}\ln x
+\end{aligned}
+\]
+Thus \(f^{-1}(x) = \frac12 \ln x\).
+
+---
+
+## 5.10 Summary – Key Points to Remember
+
+- \(\log_a x\) is defined only for \(x>0\).  
+- \(\log_a 1 = 0\), \(\log_a a = 1\).  
+- Laws: \(\log(MN)=\log M+\log N\), \(\log(M/N)=\log M-\log N\), \(\log(M^k)=k\log M\).  
+- Exponential \(y=a^x\) has horizontal asymptote \(y=0\); logarithmic \(y=\log_a x\) has vertical asymptote \(x=0\).  
+- Transformations shift asymptotes: \(y=a^x+c\) shifts asymptote to \(y=c\); \(y=\log_a(x-h)\) shifts asymptote to \(x=h\).  
+- When solving logarithmic equations, **always check domain** (arguments > 0).
+
+---

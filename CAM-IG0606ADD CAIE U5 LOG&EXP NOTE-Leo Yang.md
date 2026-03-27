@@ -482,6 +482,28 @@ t_1 + t_2 = k,\quad t_1 t_2 = 1.
 - Combined with discriminant \( \Delta = k^2 - 4 \ge 0 \) → \( k \ge 2 \) or \( k \le -2 \).
 - Intersection: \( k \ge 2 \).
 
+## 3. Equations Reducible to Quadratic Form (Examples)
+
+### Example 1 (Exponential type)
+Solve \(4^x - 6 \cdot 2^x + 8 = 0\).
+
+- Let \(t = 2^x\) (note \(t > 0\)), then \(4^x = t^2\).
+- The equation becomes \(t^2 - 6t + 8 = 0\).
+- Factor: \((t-2)(t-4)=0\) → \(t = 2\) or \(t = 4\).
+- Substitute back:
+  - \(2^x = 2 \Rightarrow x = 1\)
+  - \(2^x = 4 \Rightarrow x = 2\)
+- Answer: \(x = 1,\;2\).
+
+### Example 2 (Logarithmic type)
+Solve \((\lg x)^2 - 3\lg x + 2 = 0\).
+
+- Let \(t = \lg x\) (no restriction on \(t\)), then \(t^2 - 3t + 2 = 0\).
+- Factor: \((t-1)(t-2)=0\) → \(t = 1\) or \(t = 2\).
+- Substitute back:
+  - \(\lg x = 1 \Rightarrow x = 10\)
+  - \(\lg x = 2 \Rightarrow x = 100\)
+- Answer: \(x = 10,\;100\) (domain automatically satisfied).
 ---
 
 **Note**: Vieta gives only the sum and product, not the roots themselves. It must be used together with the discriminant and domain conditions.

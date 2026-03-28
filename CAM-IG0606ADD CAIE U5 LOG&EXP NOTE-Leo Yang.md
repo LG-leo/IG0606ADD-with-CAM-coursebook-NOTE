@@ -736,69 +736,93 @@ Check the domain: \(y-1>0 \Rightarrow y>1\), and \(y-1\neq1 \Rightarrow y\neq2\)
 \(y=3\) satisfies both, so it is the only solution.
 **Note**:To calculate by sequence, first find a quantity (for example, log_√b 9a), and then combine the pairs.
 ---
-
-**New problem:**  
+### Problem
 Simplify  
 \[
 \log_a 4 + (\log_a \sqrt{b})\,(\log_{\sqrt{b}} 8a)
 \]  
-and write the result in the form \(c + d\log_a 4\).
+and express the result in the form \(c + d\log_a 4\).
 
+---
 
-**Step 1:** Express \(\log_a \sqrt{b}\) using the power rule.  
+### Step‑by‑step
+
+**Step 1 – Simplify \(\log_a \sqrt{b}\)**  
 \[
-\log_a \sqrt{b} = \log_a b^{1/2} = \frac{1}{2}\log_a b
+\log_a \sqrt{b} = \log_a b^{1/2} = \frac12 \log_a b
 \]
 
-**Step 2:** Use change of base for \(\log_{\sqrt{b}} 8a\).  
+**Step 2 – Change the base of \(\log_{\sqrt{b}} (8a)\) to base \(a\)**  
 \[
 \log_{\sqrt{b}} (8a) = \frac{\log_a (8a)}{\log_a \sqrt{b}}
 \]  
 Numerator: \(\log_a (8a) = \log_a 8 + \log_a a = \log_a 8 + 1\)  
-Denominator (from Step 1): \(\log_a \sqrt{b} = \frac{1}{2}\log_a b\)  
-So  
+Denominator (from Step 1): \(\log_a \sqrt{b} = \frac12 \log_a b\)  
+Thus  
 \[
-\log_{\sqrt{b}} (8a) = \frac{\log_a 8 + 1}{\frac{1}{2}\log_a b} = \frac{2(\log_a 8 + 1)}{\log_a b}
+\log_{\sqrt{b}} (8a) = \frac{\log_a 8 + 1}{\frac12 \log_a b} = \frac{2(\log_a 8 + 1)}{\log_a b}
 \]
 
-**Step 3:** Multiply the two logarithmic terms.  
+**Step 3 – Multiply the two logarithmic terms**  
 \[
-(\log_a \sqrt{b})(\log_{\sqrt{b}} 8a) = \left(\frac{1}{2}\log_a b\right) \cdot \left(\frac{2(\log_a 8 + 1)}{\log_a b}\right)
+(\log_a \sqrt{b})(\log_{\sqrt{b}} 8a) = \left(\frac12 \log_a b\right)\cdot \left(\frac{2(\log_a 8 + 1)}{\log_a b}\right)
 \]  
 Cancel \(\log_a b\) and the factor \(2\):  
 \[
 = 1 \cdot (\log_a 8 + 1) = \log_a 8 + 1
 \]
 
-**Step 4:** Add the remaining \(\log_a 4\).  
+**Step 4 – Add the remaining \(\log_a 4\)**  
 \[
-\log_a 4 + (\log_a \sqrt{b})(\log_{\sqrt{b}} 8a) = \log_a 4 + (\log_a 8 + 1) = \log_a 4 + \log_a 8 + 1
+\log_a 4 + (\log_a \sqrt{b})(\log_{\sqrt{b}} 8a) = \log_a 4 + \log_a 8 + 1
 \]
 
-**Step 5:** Combine \(\log_a 4 + \log_a 8\).  
+**Step 5 – Combine \(\log_a 4 + \log_a 8\)**  
 \[
 \log_a 4 + \log_a 8 = \log_a (4 \times 8) = \log_a 32
-\]  
-But \(\log_a 32 = \log_a (2^5) = 5\log_a 2\). However, the desired form is \(c + d\log_a 4\).  
-Note that \(\log_a 32 = \log_a (4^{5/2}) = \frac{5}{2}\log_a 4\) because \(4^{5/2} = (2^2)^{5/2} = 2^5 = 32\).  
-
-Thus:  
-\[
-\log_a 4 + \log_a 8 = \frac{5}{2}\log_a 4
 \]
 
-**Step 6:** Final expression:  
+**Step 6 – Express \(\log_a 32\) in terms of \(\log_a 4\)**  
+Notice \(32 = 4^{5/2}\) because \(4^{5/2} = (2^2)^{5/2} = 2^5 = 32\).  
+Hence  
 \[
-\frac{5}{2}\log_a 4 + 1
+\log_a 32 = \log_a (4^{5/2}) = \frac{5}{2}\log_a 4
+\]
+
+**Step 7 – Write the final expression**  
+\[
+\log_a 4 + (\log_a \sqrt{b})(\log_{\sqrt{b}} 8a) = \frac{5}{2}\log_a 4 + 1
 \]  
-So in the form \(c + d\log_a 4\), we have \(c = 1\), \(d = \frac{5}{2}\).
+So in the form \(c + d\log_a 4\) we have  
+\[
+c = 1,\qquad d = \frac{5}{2}
+\]
 
 ---
 
-**Answer:**  
+**Final answer**  
 \[
-\log_a 4 + (\log_a \sqrt{b})(\log_{\sqrt{b}} 8a) = 1 + \frac{5}{2}\log_a 4
+\boxed{1 + \frac{5}{2}\log_a 4}
 \]
+
+## Strategy for “Long Train” Logarithm Problems
+
+When you see a complicated expression involving nested logarithms (e.g., \(\log_{\sqrt{b}} 9a\) inside a product), **split it into steps**:
+
+1. **Isolate the most complex part** – treat it as a separate sub‑problem.  
+2. **Simplify that part** using change of base or power rules.  
+3. **Plug the simplified result back** and combine with the remaining terms.  
+
+**Example** (as seen earlier):  
+To simplify \(\log_a 9 + (\log_a b)(\log_{\sqrt{b}} 9a)\), first work on \(\log_{\sqrt{b}} 9a\):
+
+\[
+\log_{\sqrt{b}} 9a = \frac{\log_a (9a)}{\log_a \sqrt{b}} = \frac{\log_a 9 + 1}{\frac12 \log_a b} = \frac{2(1+\log_a 9)}{\log_a b}.
+\]
+
+Then multiply by \(\log_a b\) and add the remaining term.
+
+This “divide and conquer” approach turns a long train into short, manageable carriages.
 ---
 
 ## One‑Line Summary

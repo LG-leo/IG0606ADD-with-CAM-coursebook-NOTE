@@ -115,13 +115,17 @@ $$
 ## General Form
 For a sine or cosine function:
 $$
-y = a\sin(bx + c) + d \quad \text{or} \quad y = a\cos(bx + c) + d
+y = a\sin(bx + c) + d
+$$
+or
+$$
+y = a\cos(bx + c) + d
 $$
 
-- **Amplitude**: $|a|$ – the maximum vertical distance from the equilibrium line $y = d$.
-- **Period**: $2\pi / |b|$ (for sine/cosine); for tangent: $\pi / |b|$.
-- **Phase shift**: $-c / b$ (right if positive, left if negative).
-- **Vertical shift**: $d$.
+- Amplitude: $|a|$ – the maximum vertical distance from the equilibrium line $y = d$.
+- Period: $2\pi / |b|$ (for sine/cosine); for tangent: $\pi / |b|$.
+- Phase shift: $-c / b$ (right if positive, left if negative).
+- Vertical shift: $d$.
 
 ---
 
@@ -129,7 +133,7 @@ $$
 
 ### 1. Amplitude
 $$
-\text{Amplitude} = |a| = |3| = 3
+Amplitude = |a| = |3| = 3
 $$
 The graph oscillates 3 units above and below the line $y = 4$.
 
@@ -139,11 +143,11 @@ $$
 y(0) = 3\sin(6) + 4
 $$
 Here $6$ is in radians.  
-$\sin 6 \approx -0.2794$ (because $6\ \text{rad} \approx 343.8^\circ$).  
+$\sin 6 \approx -0.2794$ (because $6$ rad is about $343.8$ degrees).  
 $$
 y(0) \approx 3 \times (-0.2794) + 4 = -0.8382 + 4 = 3.1618 \approx 3
 $$
-So the graph crosses the $y$-axis near $y = 3$.
+So the graph crosses the y‑axis near $y = 3$.
 
 ### 3. Maximum and Minimum Values
 The sine function ranges from $-1$ to $1$. Thus:
@@ -154,9 +158,9 @@ Adding the vertical shift $d = 4$:
 $$
 y \in [1, 7]
 $$
-- **Maximum**: when $\sin(2x + 6) = 1$,  
+- Maximum: when $\sin(2x + 6) = 1$,  
   $y_{\max} = 3 \times 1 + 4 = 7$.
-- **Minimum**: when $\sin(2x + 6) = -1$,  
+- Minimum: when $\sin(2x + 6) = -1$,  
   $y_{\min} = 3 \times (-1) + 4 = 1$.
 
 The extreme values depend only on the amplitude and vertical shift, not on the phase shift.
@@ -167,23 +171,23 @@ $$
 2x + 6 = 2(x + 3)
 $$
 Then $y = 3\sin(2(x+3)) + 4$.  
-The graph of $y = 3\sin(2x) + 4$ is shifted **left** by 3 units (because $x$ is replaced by $x+3$).  
+The graph of $y = 3\sin(2x) + 4$ is shifted left by 3 units (because $x$ is replaced by $x+3$).  
 Check using the formula:
 $$
--\frac{c}{b} = -\frac{6}{2} = -3 \quad\text{(negative means left shift)}
+-c/b = -6/2 = -3 \quad\text{(negative means left shift)}
 $$
 
 ---
 
 ## Key Points
-- **Amplitude** $ = |a| $
-- **Period** $ = 2\pi / |b| $ (sine/cosine)
-- **Phase shift** $ = -c / b $ (positive → right, negative → left)
-- **Vertical shift** $ = d $
-- **Maximum value** $ = |a| + d $
-- **Minimum value** $ = -|a| + d $
+- Amplitude = $|a|$
+- Period = $2\pi / |b|$ (sine/cosine)
+- Phase shift = $-c / b$ (positive → right, negative → left)
+- Vertical shift = $d$
+- Maximum value = $|a| + d$
+- Minimum value = $-|a| + d$
 
-These formulas work for cosine as well; for tangent, use period $\pi / |b|$ and no amplitude (range all real numbers).
+These formulas work for cosine as well. For tangent, the period is $\pi / |b|$ and there is no amplitude (the range is all real numbers).
 ---
 
 ### 9.2.3 Determine Equation from Graph

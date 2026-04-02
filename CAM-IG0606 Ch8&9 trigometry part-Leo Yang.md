@@ -112,7 +112,6 @@ $$
 
 ---
 
-
 ## General Form
 For a sine or cosine function:
 $$
@@ -120,8 +119,8 @@ y = a\sin(bx + c) + d \quad \text{or} \quad y = a\cos(bx + c) + d
 $$
 
 - **Amplitude**: $|a|$ – the maximum vertical distance from the equilibrium line $y = d$.
-- **Period**: $\frac{2\pi}{|b|}$ (for sine/cosine); for tangent: $\frac{\pi}{|b|}$.
-- **Phase shift**: $-\frac{c}{b}$ (right if positive, left if negative).
+- **Period**: $2\pi / |b|$ (for sine/cosine); for tangent: $\pi / |b|$.
+- **Phase shift**: $-c / b$ (right if positive, left if negative).
 - **Vertical shift**: $d$.
 
 ---
@@ -165,9 +164,9 @@ The extreme values depend only on the amplitude and vertical shift, not on the p
 ### 4. Phase Shift
 Rewrite the argument:
 $$
-2x + 6 = 2\left(x + 3\right)
+2x + 6 = 2(x + 3)
 $$
-Then $y = 3\sin\big(2(x+3)\big) + 4$.  
+Then $y = 3\sin(2(x+3)) + 4$.  
 The graph of $y = 3\sin(2x) + 4$ is shifted **left** by 3 units (because $x$ is replaced by $x+3$).  
 Check using the formula:
 $$
@@ -178,13 +177,13 @@ $$
 
 ## Key Points
 - **Amplitude** $ = |a| $
-- **Period** $ = \frac{2\pi}{|b|} $ (sine/cosine)
-- **Phase shift** $ = -\frac{c}{b} $ (positive → right, negative → left)
+- **Period** $ = 2\pi / |b| $ (sine/cosine)
+- **Phase shift** $ = -c / b $ (positive → right, negative → left)
 - **Vertical shift** $ = d $
 - **Maximum value** $ = |a| + d $
 - **Minimum value** $ = -|a| + d $
 
-These formulas work for cosine as well; for tangent, use period $\frac{\pi}{|b|}$ and no amplitude (range all real numbers).
+These formulas work for cosine as well; for tangent, use period $\pi / |b|$ and no amplitude (range all real numbers).
 ---
 
 ### 9.2.3 Determine Equation from Graph

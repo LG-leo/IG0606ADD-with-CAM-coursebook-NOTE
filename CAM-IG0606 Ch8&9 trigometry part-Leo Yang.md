@@ -325,81 +325,81 @@ $$
 
 ---
 
-##9.4.5 Using a Calculator (Paper 2),  Proving $$ \sin x = \frac{x}{2} $$ Has Exactly Three Solutions on $$ [-\pi,\pi] $$ Using Calculus
+## 9.4.5 Using a Calculator (Paper 2),  Proving $$ \sin x = \frac{x}{2} $$ Has Exactly Three Solutions on $$ [-\pi,\pi] $$ Using Calculus
+
+## Proving sin x = x/2 Has Exactly Three Solutions on [-π,π] Using Calculus
 
 ### Step 1: Define the function and use parity
 
 Let  
 $$
-f(x) = \sin x - \frac{x}{2}.
+f(x) = sin x - x/2.
 $$
 Since  
 $$
-\sin(-x)=-\sin x,
+sin(-x) = - sin x,
 $$  
 we have  
 $$
-f(-x) = -\sin x + \frac{x}{2} = -\left(\sin x - \frac{x}{2}\right) = -f(x).
+f(-x) = - sin x + x/2 = -(sin x - x/2) = -f(x).
 $$
-Thus $$ f $$ is odd. If $$ x_0 \neq 0 $$ is a root, then $$ -x_0 $$ is also a root. We only need to study roots on $$ [0,\pi] $$ and then mirror to the negative side. Clearly $$ f(0)=0 $$, so $$ x=0 $$ is one solution.
+Thus f is odd. If x₀ ≠ 0 is a root, then -x₀ is also a root. We only need to study roots on [0,π] and then mirror to the negative side. Clearly f(0)=0, so x=0 is one solution.
 
 ### Step 2: Derivative and monotonicity intervals
 
 $$
-f'(x) = \cos x - \frac12.
+f'(x) = cos x - 1/2.
 $$
-On $$ [0,\pi] $$, $$ \cos x $$ decreases from $$ 1 $$ to $$ -1 $$. Solving $$ f'(x)=0 $$ gives $$ \cos x = \frac12 $$, whose unique solution is $$ x = \frac{\pi}{3} $$ (because $$ \cos(\pi/3)=1/2 $$). Hence:
+On [0,π], cos x decreases from 1 to -1. Solving f'(x)=0 gives cos x = 1/2, whose unique solution is x = π/3 (because cos(π/3)=1/2). Hence:
 
-- For $$ 0 \le x < \pi/3 $$, $$ \cos x > 1/2 $$ so $$ f'(x) > 0 $$; $$ f $$ is strictly increasing.
-- For $$ \pi/3 < x \le \pi $$, $$ \cos x < 1/2 $$ so $$ f'(x) < 0 $$; $$ f $$ is strictly decreasing.
+- For 0 ≤ x < π/3, cos x > 1/2 so f'(x) > 0; f is strictly increasing.
+- For π/3 < x ≤ π, cos x < 1/2 so f'(x) < 0; f is strictly decreasing.
 
-### Step 3: Evaluate $$ f $$ at key points
+### Step 3: Evaluate f at key points
 
 $$
-f(0) = \sin 0 - 0 = 0.
+f(0) = sin 0 - 0 = 0.
 $$
 $$
-f\left(\frac{\pi}{3}\right) = \sin\frac{\pi}{3} - \frac{\pi}{6} = \frac{\sqrt{3}}{2} - \frac{\pi}{6} \approx 0.866025 - 0.523599 = 0.342426 > 0.
+f(π/3) = sin(π/3) - (π/3)/2 = √3/2 - π/6 ≈ 0.866025 - 0.523599 = 0.342426 > 0.
 $$
 $$
-f(\pi) = \sin\pi - \frac{\pi}{2} = 0 - \frac{\pi}{2} \approx -1.5708 < 0.
+f(π) = sin π - π/2 = 0 - π/2 ≈ -1.5708 < 0.
 $$
 
 ### Step 4: Count the roots
 
-- On $$ [0,\pi/3] $$, $$ f $$ increases strictly from $$ 0 $$ to $$ f(\pi/3)>0 $$. Since $$ f(0)=0 $$ and it is strictly increasing, **there is no other root** in $$ (0,\pi/3] $$.
-- On $$ [\pi/3,\pi] $$, $$ f $$ decreases strictly from $$ f(\pi/3)>0 $$ to $$ f(\pi)<0 $$. By the Intermediate Value Theorem (Zero Theorem), there exists a unique $$ c \in (\pi/3,\pi) $$ such that $$ f(c)=0 $$. Strict monotonicity guarantees uniqueness.
+- On [0,π/3], f increases strictly from 0 to f(π/3)>0. Since f(0)=0 and it is strictly increasing, there is no other root in (0,π/3].
+- On [π/3,π], f decreases strictly from f(π/3)>0 to f(π)<0. By the Intermediate Value Theorem, there exists a unique c in (π/3,π) such that f(c)=0. Strict monotonicity guarantees uniqueness.
 
-Thus there is exactly one positive root $$ c $$ in $$ (0,\pi] $$ ($$ c \approx 1.8955 $$).
+Thus there is exactly one positive root c in (0,π] (c ≈ 1.8955).
 
 ### Step 5: Obtain the negative root by oddness
 
-Because $$ f $$ is odd and $$ c>0 $$ is a root, $$ f(-c) = -f(c) = 0 $$, so $$ -c $$ is also a root. By symmetry of monotonicity, there is no other root in $$ (-\pi,0) $$.
+Because f is odd and c>0 is a root, f(-c) = -f(c) = 0, so -c is also a root. By symmetry of monotonicity, there is no other root in (-π,0).
 
 ### Step 6: Conclusion
 
-On $$ [-\pi,\pi] $$, the solutions are  
+On [-π,π], the solutions are  
 $$
-x = -c,\quad x = 0,\quad x = c,
+x = -c, \quad x = 0, \quad x = c,
 $$
 giving **3 solutions** in total.
-
-Thus we have proven the result using only algebra and calculus (derivatives, monotonicity, the Intermediate Value Theorem) without any graph.
 
 ---
 
 ## Table of Derivatives of Trigonometric Functions
 
-| Function $$ f(x) $$ | Derivative $$ f'(x) $$ |
+| Function f(x) | Derivative f'(x) |
 | :--- | :--- |
-| $$ \sin x $$ | $$ \cos x $$ |
-| $$ \cos x $$ | $$ -\sin x $$ |
-| $$ \tan x $$ | $$ \sec^2 x $$ (or $$ 1+\tan^2 x $$) |
-| $$ \cot x $$ | $$ -\csc^2 x $$ |
-| $$ \sec x $$ | $$ \sec x \tan x $$ |
-| $$ \csc x $$ (written $$ \cosec x $$ in CIE 0606) | $$ -\csc x \cot x $$ |
+| sin x | cos x |
+| cos x | - sin x |
+| tan x | sec² x (or 1 + tan² x) |
+| cot x | - csc² x |
+| sec x | sec x tan x |
+| csc x (written cosec x in CIE 0606) | - csc x cot x |
 
-> **Note**: In the CIE IGCSE 0606 examination, the cosecant function is written as $$ \cosec x $$, but its derivative remains the same: $$ \frac{d}{dx}(\cosec x) = -\cosec x \cot x $$.
+> **Note**: In CIE IGCSE 0606, cosecant is written as cosec x, derivative remains - cosec x cot x.
 ---
 
 ## 9.5 Common Problem Types & Solutions

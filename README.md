@@ -78,3 +78,22 @@ It is recommended to **Clone** the repository so you can easily `git pull` futur
 > This guide is a personal study compilation. Some content is adapted from the original textbook for educational, non‑commercial purposes. It does not replace the original textbook.
 
 ---
+
+## 📌 About this project
+
+- **Why this note exists**  
+  The official textbook (Cambridge IGCSE Additional Mathematics 3rd edition) has significant gaps – Topics 2, 3 and parts of Topic 4 are missing more than 40% of the content. This note is my attempt to fill those gaps, reorganize the material by syllabus order, and add step‑by‑step worked examples and common pitfalls.
+
+- **Ongoing updates**  
+  Because the textbook is so poorly structured, I continue to revise and supplement older chapters. **It is recommended to `clone` this repository** so you can easily `git pull` future improvements.
+
+- **Who this is for**  
+  You should have already completed IGCSE Mathematics (0580 Extended / 0607 Extended) or an equivalent course and achieved at least a grade A/A* (or >80%). This note assumes that background and focuses on the additional topics required for 0606.
+
+- **A beginner’s perspective**  
+  I am also a student, not a teacher. This is my personal study guide. If you find any errors or unclear parts, please open an Issue – I will try my best to improve it.
+
+> The note does not replace the original textbook. When in doubt, always follow the official syllabus and your teacher’s advice.
+
+- **Honest opinion**  
+  The official textbook is, frankly, poorly written. I had to rewrite and supplement large parts of Topics 2–4 on my own. This note reflects my own understanding and might help you avoid the same frustration.

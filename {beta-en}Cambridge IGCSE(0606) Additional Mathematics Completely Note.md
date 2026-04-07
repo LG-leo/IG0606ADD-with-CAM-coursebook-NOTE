@@ -306,32 +306,26 @@ Displacement from $A$ to $B$ is $\overrightarrow{AB} = \mathbf{r}_B - \mathbf{r}
 Example: $A(1,1), B(4,5)$ → displacement $(3,4)$, magnitude 5.
 
 #### Definition of Perpendicular
-Two non‑zero vectors \(\mathbf{u}\) and \(\mathbf{v}\) are **perpendicular** (orthogonal) iff their **dot product is zero**:
-\[
-\mathbf{u} \cdot \mathbf{v} = u_x v_x + u_y v_y = 0
-\]
-Geometrically, the angle between them is \(90^\circ\).
+Two non-zero vectors u and v are perpendicular (orthogonal) iff their dot product is zero:
+u · v = u_x * v_x + u_y * v_y = 0
+Geometrically, the angle between them is 90°.
 
 #### Horizontal Vector
-A vector \(\mathbf{h}\) is **horizontal** if its \(y\)-component is zero:
-\[
-\mathbf{h} = (h_x, 0) \quad (h_x \neq 0)
-\]
-Its direction is parallel to the \(x\)-axis (either left or right).
+A vector h is horizontal if its y-component is zero:
+h = (h_x, 0), with h_x ≠ 0
+Its direction is parallel to the x-axis (left or right).
 
 #### Perpendicularity via Slopes
-If both non‑zero vectors are not vertical (i.e., their slopes exist), let their slopes be \(k_1\) and \(k_2\). Then
-\[
-\mathbf{u} \perp \mathbf{v} \iff k_1 \cdot k_2 = -1
-\]
+If both non-zero vectors are not vertical (i.e., their slopes exist), let their slopes be k₁ and k₂. Then
+u ⟂ v  if and only if  k₁ · k₂ = -1
 
 #### Special Case: Horizontal and Vertical
-A horizontal vector \(\mathbf{h} = (h_x, 0)\) is perpendicular to a vertical vector \(\mathbf{v} = (0, v_y)\). In this case:
-- The slope of \(\mathbf{h}\) is \(0\)
-- The slope of \(\mathbf{v}\) is undefined (infinite)
-Dot product check: \((h_x, 0) \cdot (0, v_y) = 0 + 0 = 0\), satisfying the perpendicular condition.
+A horizontal vector h = (h_x, 0) is perpendicular to a vertical vector v = (0, v_y). In this case:
+- The slope of h is 0
+- The slope of v is undefined (infinite)
+Dot product check: (h_x, 0) · (0, v_y) = 0 + 0 = 0, satisfying the perpendicular condition.
 
-> **Note**: The zero vector is both perpendicular and parallel to every vector, but we usually exclude it in ordinary discussions.
+> Note: The zero vector is both perpendicular and parallel to every vector, but we usually exclude it in ordinary discussions.
 
 ---
 

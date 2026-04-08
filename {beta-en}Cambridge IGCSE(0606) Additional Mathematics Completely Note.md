@@ -325,109 +325,109 @@ Displacement from $A$ to $B$ is $\overrightarrow{AB} = \mathbf{r}_B - \mathbf{r}
 Example: $A(1,1), B(4,5)$ → displacement $(3,4)$, magnitude 5.
 
 ---
+## 1.4 From Average Velocity to Instantaneous Velocity (Understanding Limits)
 
-## 1.4 Rate of Change: From Average to Instantaneous
+Let’s start with a simple example. Suppose an object moves along a straight line, and its position at time t is given by s(t) = t². We want to know how fast it is moving at the exact moment t = 1.
 
-### 1.4.1 Average velocity
+### How do we calculate average velocity?
+From time 1 to time 1 + Δt, the distance traveled is s(1+Δt) − s(1). Average velocity = distance divided by Δt.
 
-For a particle at position $\mathbf{r}(t)$, over $[t, t+Δt]$:
-$$
-\mathbf{v}_{\text{avg}} = \frac{\mathbf{r}(t+Δt) - \mathbf{r}(t)}{Δt}
-$$
+Let’s try smaller and smaller Δt:
 
-### 1.4.2 Numerical approximation – limit intuition
+- Δt = 0.5 : position goes from 1 to 2.25, distance = 1.25, average = 1.25 / 0.5 = 2.5
+- Δt = 0.1 : position goes from 1 to 1.21, distance = 0.21, average = 0.21 / 0.1 = 2.1
+- Δt = 0.01 : position goes from 1 to 1.0201, distance = 0.0201, average = 0.0201 / 0.01 = 2.01
+- Δt = 0.001 : average ≈ 2.001
 
-Take linear motion $x(t)=t^2$. Compute average velocities:
+As Δt gets closer and closer to 0, the average velocity gets closer and closer to 2. That “closer value” is the **instantaneous velocity** at t = 1. We write v(1) = 2.
 
-| $t_0$ | $Δt$ | average velocity $(x(t_0+Δt)-x(t_0))/Δt$ |
-|-------|------|-------------------------------------------|
-| 1     | 0.5  | (2.25-1)/0.5 = 2.5 |
-| 1     | 0.1  | (1.21-1)/0.1 = 2.1 |
-| 1     | 0.01 | (1.0201-1)/0.01 = 2.01 |
-| 1     | 0.001| ≈2.001 |
-
-As $Δt→0$, average velocity approaches 2. This limit is the **instantaneous velocity** at $t=1$.
-
-### 1.4.3 Instantaneous velocity (derivative)
-$$
-\mathbf{v}(t) = \lim_{Δt→0} \frac{\mathbf{r}(t+Δt) - \mathbf{r}(t)}{Δt} = \left( \frac{dx}{dt}, \frac{dy}{dt} \right)
-$$
-Notation: $\mathbf{v} = d\mathbf{r}/dt$.
-
-**Key understanding**: $Δt→0$ means approaching zero but not equal; instantaneous velocity is the limit of average velocities.
-
-**Example**: $\mathbf{r}(t) = (t^2, 2t)$ → $\mathbf{v}(t) = (2t, 2)$. At $t=1$, $\mathbf{v}=(2,2)$.
-
-### 1.4.4 Acceleration
-
-Rate of change of velocity:
-$$
-\mathbf{a}(t) = \frac{d\mathbf{v}}{dt} = \left( \frac{d^2x}{dt^2}, \frac{d^2y}{dt^2} \right)
-$$
-**Example**: $\mathbf{v}(t) = (2t,2)$ → $\mathbf{a}(t) = (2,0)$.
+This is the idea of a limit: we never let Δt become exactly 0 (because that would give 0/0, which is meaningless), but we let it approach 0 and see what number the average velocity approaches.
 
 ---
 
-## 1.5 From Acceleration to Velocity/Position (Integration)
+## 1.5 From Acceleration to Velocity and Position (Using Integration)
 
-Given $\mathbf{a}(t)$ and initial conditions $\mathbf{v}(0)=\mathbf{v}_0$, $\mathbf{r}(0)=\mathbf{r}_0$:
-$$
-\mathbf{v}(t) = ∫ \mathbf{a}(t)\, dt + \mathbf{v}_0
-$$
-$$
-\mathbf{r}(t) = ∫ \mathbf{v}(t)\, dt + \mathbf{r}_0
-$$
-Integrate component‑wise.
+In physics, acceleration a(t) is the rate of change of velocity v(t). If we know acceleration and want to recover velocity, we need to do the opposite of differentiation – that is **integration**.
 
-**Example**: $\mathbf{a}(t)=(0,-g)$, $\mathbf{v}_0=(v_{0x}, v_{0y})$, $\mathbf{r}_0=(0,0)$.  
-$\mathbf{v}(t) = (v_{0x}, v_{0y} - gt)$  
-$\mathbf{r}(t) = (v_{0x}t,\ v_{0y}t - \frac12 gt^2)$ – the projectile motion equations.
+The basic formulas (for vectors, but they work for one‑dimensional motion too):
 
----
+- Velocity v(t) = ∫ a(t) dt + initial velocity v₀
+- Position r(t) = ∫ v(t) dt + initial position r₀
 
-## 1.6 Circular Motion (optional, preview of chain rule)
+**Example: Projectile motion**  
+A ball is thrown from the ground. Its initial velocity has horizontal component v₀x and vertical component v₀y. Gravity pulls downward with acceleration g. So a(t) = (0, -g).
 
-Uniform circular motion, radius $R$, angular speed $ω$:
-$$
-\mathbf{r}(t) = (R\cos(ωt), R\sin(ωt))
-$$
-Velocity: $\mathbf{v}(t) = (-Rω\sin(ωt), Rω\cos(ωt))$  
-Speed: $\|\mathbf{v}\| = Rω$ (constant)  
-Acceleration: $\mathbf{a}(t) = (-Rω^2\cos(ωt), -Rω^2\sin(ωt)) = -ω^2 \mathbf{r}(t)$ – centripetal, magnitude $Rω^2$.
+First, integrate acceleration to get velocity:  
+v_x(t) = ∫ 0 dt = constant = v₀x  
+v_y(t) = ∫ (-g) dt = -g t + v₀y  
+Thus v(t) = (v₀x, v₀y - g t)
+
+Next, integrate velocity to get position (starting from (0,0)):  
+x(t) = ∫ v₀x dt = v₀x · t  
+y(t) = ∫ (v₀y - g t) dt = v₀y · t - ½ g t²
+
+These are the well‑known equations of projectile motion.
 
 ---
 
-## 1.7 Relative Motion
+## 1.6 Relative Motion (Adding Velocities)
 
-Absolute velocity = relative velocity + velocity of reference frame.  
-In symbols: $\mathbf{v}_{A/C} = \mathbf{v}_{A/B} + \mathbf{v}_{B/C}$.
+If you stand on the ground and watch a moving object, its velocity is actually the sum of two parts: the object’s velocity relative to a moving reference frame, plus the velocity of that reference frame itself.
 
-**Example**: Boat’s speed in still water 4 m/s east, current 3 m/s north.  
-$\mathbf{v}_{\text{boat/ground}} = (4,0)+(0,3) = (4,3)$, magnitude 5 m/s, direction east of north by $\arctan(3/4)$.
+A simple rule: **Absolute velocity = Relative velocity + Velocity of the reference frame**.  
+In symbols: v_(A/C) = v_(A/B) + v_(B/C)
 
----
+**Example**: A boat can move at 4 m/s east relative to the water. The water current flows north at 3 m/s. What is the boat’s velocity relative to the ground?
 
-## 1.8 Comprehensive Examples
+Choose east as the positive x‑direction, north as positive y.  
+Boat’s velocity relative to water = (4, 0)  
+Water’s velocity relative to ground = (0, 3)  
+Then boat’s velocity relative to ground = (4, 0) + (0, 3) = (4, 3)
 
-**Example 1**: $\mathbf{r}(t) = (t^3-3t,\ t^2-2t)$. Find velocity and acceleration at $t=2$.  
-$\mathbf{v}(t) = (3t^2-3,\ 2t-2)$, $\mathbf{a}(t) = (6t,\ 2)$.  
-At $t=2$: $\mathbf{v}=(9,2)$, $\mathbf{a}=(12,2)$.
-
-**Example 2**: $\mathbf{a}(t)=(6t,4)$, $\mathbf{v}_0=(1,0)$, $\mathbf{r}_0=(0,0)$. Find motion.  
-$\mathbf{v}(t) = ∫(6t,4)dt = (3t^2,4t) + (1,0) = (3t^2+1, 4t)$  
-$\mathbf{r}(t) = ∫(3t^2+1,4t)dt = (t^3+t, 2t^2) + (0,0) = (t^3+t, 2t^2)$.
-
-**Example 3** (1D): $x(t)=3t^2-2t+1$ → $v(t)=6t-2$, $a(t)=6$.
+Magnitude = √(4² + 3²) = 5 m/s  
+Direction = east of north, angle = arctan(3/4) ≈ 36.87°
 
 ---
 
-## 1.9 Chapter Summary
+## 1.7 More Examples to Help You Practice
 
-- Vectors can represent position, velocity, acceleration.
-- Average velocity → instantaneous velocity via limits.
-- Velocity = derivative of position; acceleration = derivative of velocity.
-- Integration reverses the process.
-- Parallel vectors include opposite directions; zero vector has arbitrary direction.
+**Example 1: Given position, find velocity and acceleration**  
+A particle moves with position vector r(t) = (t³ − 3t, t² − 2t).  
+Velocity v(t) is the derivative of position (differentiate each component):  
+v_x = 3t² − 3, v_y = 2t − 2, so v(t) = (3t² − 3, 2t − 2)  
+Acceleration a(t) is the derivative of velocity: a_x = 6t, a_y = 2, so a(t) = (6t, 2)  
+At t = 2: v = (9, 2), a = (12, 2)
+
+**Example 2: Given acceleration and initial conditions, find motion**  
+Acceleration a(t) = (6t, 4), initial velocity v₀ = (1, 0), initial position r₀ = (0, 0).  
+First integrate to get velocity:  
+∫6t dt = 3t², plus the initial x‑component 1 → v_x = 3t² + 1  
+∫4 dt = 4t, plus the initial y‑component 0 → v_y = 4t  
+So v(t) = (3t² + 1, 4t)  
+
+Then integrate velocity to get position:  
+∫(3t² + 1) dt = t³ + t, plus initial x = 0 → x = t³ + t  
+∫4t dt = 2t², plus initial y = 0 → y = 2t²  
+Thus r(t) = (t³ + t, 2t²)
+
+**Example 3: One‑dimensional motion (simpler)**  
+Displacement s(t) = 3t² − 2t + 1  
+Velocity v(t) = 6t − 2  
+Acceleration a(t) = 6
+
+---
+
+## 1.8 Chapter Summary
+
+In this chapter we started with vectors and saw that position, velocity, and acceleration can all be represented as vectors.
+
+- Average velocity = change in position divided by time interval. When the time interval approaches zero, the limit of the average velocity is the **instantaneous velocity**.
+- Velocity is the derivative (rate of change) of position; acceleration is the derivative of velocity.
+- Going the other way: given acceleration, we can use **integration** to find velocity; given velocity, we can integrate to find position.
+- For relative motion: absolute velocity = relative velocity + velocity of the reference frame.
+- Finally, the zero vector has no fixed direction, but by convention it is considered parallel to every vector (and opposite vectors are also parallel).
+
+If some of the differentiation or integration steps feel unfamiliar, don’t worry – they will be explained in detail in Chapters 4 and 6. For now, just focus on understanding the relationships between position, velocity, and acceleration.
 
 ---
 

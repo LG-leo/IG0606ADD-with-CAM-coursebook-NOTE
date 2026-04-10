@@ -534,6 +534,91 @@ The graph passes through $(0,1)$.
 
 ### 3.4.2 Rate of change – numerical approximation
 
+#### Logarithm Calculations Supplement: Natural Log (ln) and Common Log (log) Pre_Supplementary knowledge in next step
+
+##### 1. Definition
+
+- **Common logarithm**: base 10, written as $log(x)$ or $log_{10}(x)$.  
+  If $10^y = x$, then $log(x) = y$.
+
+- **Natural logarithm**: base $e$ ($e ≈ 2.71828$), written as $ln(x)$.  
+  If $e^y = x$, then $ln(x) = y$.
+
+Relationship: $ln(x) = log(x) / log(e)$, where $log(e) ≈ 0.4343$.
+
+---
+
+##### 2. Basic Logarithm Rules
+
+Let $a > 0$, $a ≠ 1$, $M > 0$, $N > 0$, and $k$ any real number:
+
+| Rule | Formula | Mnemonic | Derivation |
+|------|---------|----------|-------------|
+| **Product** | $log_a(M·N) = log_a(M) + log_a(N)$ | “multiplication becomes addition” | Set $log_a M = x$, $log_a N = y$, then $a^x = M$, $a^y = N$, so $M·N = a^{x+y}$, thus $log_a(M·N) = x+y$ |
+| **Quotient** | $log_a(M/N) = log_a(M) - log_a(N)$ | “division becomes subtraction” | Similar: $M/N = a^{x-y}$ |
+| **Power** | $log_a(M^k) = k·log_a(M)$ | “exponent becomes coefficient” | $M^k = (a^x)^k = a^{kx}$ |
+| **Change of base** | $log_a(M) = \frac{log_b(M)}{log_b(a)}$ | “convert to any base” | Let $log_a M = x$, then $a^x = M$, take $log_b$ both sides: $x·log_b(a) = log_b(M)$, solve for $x$ |
+
+###### 2.1 Common forms of change of base
+
+- To common log: $log_a(M) = \frac{log(M)}{log(a)}$
+- To natural log: $log_a(M) = \frac{ln(M)}{ln(a)}$
+
+Change of base is essential when you need to evaluate logarithms with bases other than 10 or $e$, especially without a calculator.
+
+###### 2.2 Common pitfalls
+
+- **No rule for sum**: $log_a(M+N) ≠ log_a(M) + log_a(N)$.
+- **Power rule works for any exponent** (including negative and fractional): e.g., $log_a(√M) = (1/2) log_a(M)$.
+- **Argument must be positive**: $log_a(0)$ or $log_a(negative)$ is undefined.
+
+---
+
+##### 3. Special Values of Common and Natural Logs
+
+| $x$ | $log(x)$ | $ln(x)$ |
+|-----|----------|---------|
+| 1   | 0        | 0       |
+| 10  | 1        | ≈2.3026 |
+| 2   | ≈0.3010  | ≈0.6931 |
+| 3   | ≈0.4771  | ≈1.0986 |
+| $e$ | ≈0.4343  | 1       |
+
+---
+
+##### 4. Worked Examples
+
+**Example 1 (Simplify)**: Combine $ln(3x^2) - ln(6x)$ into a single logarithm.  
+Solution: $= ln( (3x^2)/(6x) ) = ln( x/2 )$.
+
+**Example 2 (Solve equation)**: Solve $log_2(x) + log_2(x-2) = 3$.  
+Solution: Use product rule: $log_2(x(x-2)) = 3$.  
+Exponentiate: $x(x-2) = 2^3 = 8$, i.e., $x^2 - 2x - 8 = 0$, giving $x = 4$ or $x = -2$. Reject $x = -2$ (argument negative). Thus $x = 4$.
+
+**Example 3 (Change of base)**: Evaluate $log_8(16)$.  
+Solution: Method 1: $log_8(16) = \frac{ln(16)}{ln(8)} = \frac{ln(2^4)}{ln(2^3)} = \frac{4 ln2}{3 ln2} = \frac{4}{3}$.  
+Method 2: $log_8(16) = \frac{log(16)}{log(8)} = \frac{log(2^4)}{log(2^3)} = \frac{4 log2}{3 log2} = \frac{4}{3}$.
+
+**Example 4 (Exponential equation)**: Solve $3^{2x-1} = 5$.  
+Solution: Take natural log on both sides: $(2x-1) ln3 = ln5$,  
+$2x-1 = ln5 / ln3$,  
+$2x = 1 + ln5/ln3$,  
+$x = \frac{1 + ln5/ln3}{2}$.  
+Numerical approximation: $ln5≈1.6094$, $ln3≈1.0986$, $ln5/ln3≈1.465$, $x≈(1+1.465)/2=1.2325$.
+
+**Example 5 (Proof)**: Prove $log_a(b) · log_b(c) = log_a(c)$.  
+Proof: Left side $= \frac{ln b}{ln a} · \frac{ln c}{ln b} = \frac{ln c}{ln a} = log_a(c)$. This result can be used to simplify multi‑step change of base.
+
+---
+
+##### 5. Notes
+
+- The argument of a logarithm must be positive; $log(0)$ and $log(negative)$ are undefined.
+- In IGCSE 0606 exams, calculators are allowed for evaluating logarithms, but you must understand the rules.
+- Common log is sometimes written as $lg(x)$, natural log as $ln(x)$.
+
+---
+
 Take $f(x)=2^x$ as an example. Compute the average rate of change at $x=1$ for different $Δx$:
 
 | $Δx$ | average rate $(2^{1+Δx} - 2) / Δx$ |
@@ -549,21 +634,109 @@ For example, $f(1)=2$ gives a rate ≈ 1.386; $f(2)=4$ gives a rate ≈ 2.772 (e
 
 **Special natural exponential function**: $f(x) = e^x$ (with $e ≈ 2.71828$). Since $ln(e)=1$, its rate of change equals itself: $f'(x) = e^x$.
 
-## 3.5 Logarithmic Functions $f(x)=\log_a x$ $(a>0, a≠1)$
+## 3.5 Logarithmic function $f(x) = log_a x$ $(a>0, a≠1)$
 
-Inverse of exponential. Domain $x>0$, range all reals.  
-$f(x)=\ln x$ (natural log) has derivative $1/x$ (to be learned).  
-Rate of change decreases as $x$ increases.
+### 3.5.1 Form and graph
 
-**Numerical approximation for $\ln x$ at $x=1$**:
+The logarithmic function is the inverse of the exponential function. Its domain is $x>0$, and its range is all real numbers.  
+When $a>1$, the function increases but at a decreasing rate (“slower and slower”); when $0<a<1$, it decreases.  
+The graph always passes through $(1,0)$ because $log_a 1 = 0$ for any valid $a$.
 
-| $Δx$ | $(\ln(1+Δx)-0)/Δx$ |
-|------|---------------------|
-| 0.1  | 0.9531 |
-| 0.01 | 0.9950 |
-| 0.001| 0.9995 |
+**Inverse relationship**: The exponential function $y = a^x$ is strictly monotonic (increasing for $a>1$, decreasing for $0<a<1$), so it has an inverse. That inverse is precisely $y = log_a x$.  
+- Domain of exponential: all reals; range: $(0,∞)$.  
+- Domain of logarithmic: $(0,∞)$; range: all reals.  
+- Their graphs are symmetric about the line $y = x$.  
+- If you plot $y = a^x$ and $y = log_a x$ on the same axes, you will see mirror images.
 
-Limit = 1. At $x=2$, limit = 0.5; at $x=10$, limit = 0.1.
+**Understanding symmetry**:  
+If point $(p, q)$ lies on the exponential graph, i.e., $q = a^p$, then $p = log_a q$, so point $(q, p)$ lies on the logarithmic graph. The points $(p, q)$ and $(q, p)$ are symmetric about $y=x$.
+
+**Special bases**:  
+- $a = 10$ gives the common logarithm, sometimes written as $lg x$ (but we use $log_{10} x$ or $log x$).  
+- $a = e$ ($e ≈ 2.71828$) gives the natural logarithm, denoted $ln x$. Natural log has the simplest derivative: $1/x$, without extra constants.
+
+**Graph features (for $a>1$)**:  
+- As $x → 0^+$, $log_a x → -∞$ (very slow descent).  
+- It crosses the $x$-axis at $x=1$.  
+- For large $x$, $log_a x$ grows extremely slowly (e.g., $log_{10} 1000 = 3$, $log_{10} 10^6 = 6$).  
+- The curve is concave down (second derivative negative), meaning it flattens out.
+
+### 3.5.2 Rate of change – numerical approximation
+
+Take the natural logarithm $f(x) = ln x$ as an example.
+
+**Near $x=1$**:  
+Compute average rate of change from $1$ to $1+Δx$ for smaller $Δx$:
+
+| $Δx$ | average rate $(ln(1+Δx) - ln1)/Δx$ |
+|------|----------------------------------|
+| 0.1  | $ln(1.1)/0.1 ≈ 0.09531/0.1 = 0.9531$ |
+| 0.01 | $ln(1.01)/0.01 ≈ 0.00995/0.01 = 0.9950$ |
+| 0.001| about 0.9995 |
+
+As $Δx → 0$, the average rate approaches $1$. Hence the instantaneous rate of change of $ln x$ at $x=1$ is $1$.
+
+**At other points**:  
+- At $x=2$, similar numerical experiments give a limit near $0.5$.  
+- At $x=10$, the limit is about $0.1$.  
+- At $x=0.5$, the limit is about $2$.
+
+**General pattern**: The instantaneous rate of change (derivative) of $ln x$ equals $1/x$.  
+For a general base $a$, using the change‑of‑base formula $log_a x = ln x / ln a$, the derivative becomes $1/(x·ln a)$.
+
+**Comparison with exponential**:  
+- Exponential $a^x$ has derivative proportional to itself ($a^x·ln a$), so it grows faster and faster.  
+- Logarithmic $log_a x$ has derivative proportional to $1/x$, so it grows slower and slower.  
+- Because they are inverses, their derivatives satisfy $dy/dx = 1 / (dx/dy)$; if $y = a^x$, then $dx/dy = 1/(y·ln a)$, which matches the derivative of $log_a y$.
+
+### 3.5.3 Important properties of logarithms
+
+**Algebraic properties** (corresponding to exponential properties):  
+- $log_a(M·N) = log_a M + log_a N$  
+- $log_a(M/N) = log_a M - log_a N$  
+- $log_a(M^k) = k·log_a M$  
+- Change of base: $log_a M = log_b M / log_b a$
+
+These are essential for simplifying expressions and solving exponential equations. For example, to solve $2^x = 7$, take common logs: $x·log 2 = log 7$, so $x = log 7 / log 2$.
+
+**Inverse identities**:  
+- $a^{log_a x} = x$ for all $x>0$  
+- $log_a(a^x) = x$ for all real $x$
+
+These follow directly from the definition of inverse functions.
+
+### 3.5.4 Applications of logarithms
+
+- **Sound intensity (decibels)**: $L = 10·log_{10}(I/I_0)$  
+- **Earthquake magnitude (Richter scale)**: $M = log_{10}(A/A_0)$  
+- **pH scale**: $pH = -log_{10}[H^+]$  
+- **Information theory**: information content often uses base‑2 logarithms.  
+- **Algorithm complexity**: many efficient algorithms run in $O(log n)$ time (e.g., binary search).
+
+Logarithms compress wide‑ranging quantities into manageable scales and convert multiplication into addition.
+
+### 3.5.5 Common pitfalls
+
+- **Domain**: $log_a x$ is defined only for $x>0$. Beginners often forget this and introduce extraneous solutions.  
+- **Base restrictions**: $a>0$ and $a≠1$. Negative, zero, or one are not allowed.  
+- **No distributive law**: $log_a(x+y) ≠ log_a x + log_a y$.  
+- **Change of base required** when comparing logs with different bases.  
+- **Solving exponential equations**: taking logs of both sides requires the right‑hand side to be positive; otherwise no solution.
+
+### 3.5.6 Symmetry with exponential – textual description
+
+Imagine a coordinate system. Plot $y = 2^x$: it curves upward from left to right, passes through $(0,1)$ and $(1,2)$, rising faster as $x$ increases.  
+Draw the line $y = x$. Then plot $y = log_2 x$: it passes through $(1,0)$ and $(2,1)$, rising slowly and always staying below $y=x$ for $x>1$ and above for $0<x<1$.  
+The two curves are mirror images across $y=x$. For instance, the point $(1,2)$ on the exponential graph reflects to $(2,1)$ on the logarithmic graph. This symmetry vividly illustrates the inverse relationship.
+
+### 3.5.7 Chapter summary
+
+- Logarithmic function $log_a x$ is the inverse of $a^x$; domain $(0,∞)$, range $ℝ$.  
+- Graph symmetric to $a^x$ about $y=x$, passes through $(1,0)$.  
+- Increasing when $a>1$, decreasing when $0<a<1$.  
+- Derivative = $1/(x·ln a)$; for natural log it is $1/x$.  
+- Master the three basic log rules (product → sum, quotient → difference, power → coefficient) and change of base.  
+- Always respect the domain $x>0$ to avoid extraneous solutions.
 
 ## 3.6 Comparison of Rates of Change
 

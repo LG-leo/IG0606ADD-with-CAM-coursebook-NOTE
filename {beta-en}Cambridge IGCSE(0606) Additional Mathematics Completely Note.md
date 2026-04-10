@@ -525,23 +525,29 @@ Rate of change (derivative) is quadratic, can have two zeros (for extreme points
 
 **Example**: $f(x)=x^3-3x$ – derivative $3x^2-3$; local max at $x=-1$, local min at $x=1$.
 
-## 3.4 Exponential Functions $f(x)=a^x$ $(a>0, a≠1)$
+## 3.4 Exponential function $f(x) = a^x$ $(a>0, a≠1)$
 
 ### 3.4.1 Form and Graph
 
-Rapid growth (if $a>1$) or decay (if $0<a<1$). Passes through $(0,1)$.  
-Rate of change is proportional to the function value itself: $f'(x)=a^x \ln a$ (to be learned later).  
-For $f(x)=e^x$, rate of change equals itself.
+Exponential functions grow (or decay) extremely fast. When $a>1$, $f(x)$ grows explosively as $x$ increases; when $0<a<1$, $f(x)$ approaches 0 as $x$ increases.  
+The graph passes through $(0,1)$.
 
-### 3.4.2 Numerical approximation at $x=1$ for $2^x$
+### 3.4.2 Rate of change – numerical approximation
 
-| $Δx$ | average rate $(2^{1+Δx}-2)/Δx$ |
-|------|--------------------------------|
-| 0.1  | ≈1.435 |
-| 0.01 | ≈1.45  |
-| 0.001| ≈1.4427|
+Take $f(x)=2^x$ as an example. Compute the average rate of change at $x=1$ for different $Δx$:
 
-The limit is $2\ln2 ≈ 1.386$. Exponential rate grows with $x$ and is proportional to $f(x)$.
+| $Δx$ | average rate $(2^{1+Δx} - 2) / Δx$ |
+|------|----------------------------------|
+| 0.1  | $(2^{1.1} - 2)/0.1 ≈ (2.1435 - 2)/0.1 = 1.435$ |
+| 0.01 | $(2^{1.01} - 2)/0.01 ≈ (2.0145 - 2)/0.01 = 1.45$ |
+| 0.001| about 1.4427 |
+
+As $Δx → 0$, the average rate approaches $2·ln(2) ≈ 1.386$ (where $ln(2) ≈ 0.6931$). The approximate values in the table (1.435, 1.45, 1.4427) have not fully converged due to precision, but the trend is clear.
+
+**Important observation**: The rate of change of an exponential function is proportional to the function value itself. That is, the instantaneous rate of change is $f'(x) = a^x · ln(a)$.  
+For example, $f(1)=2$ gives a rate ≈ 1.386; $f(2)=4$ gives a rate ≈ 2.772 (exactly twice). When the function value doubles, the rate also doubles.
+
+**Special natural exponential function**: $f(x) = e^x$ (with $e ≈ 2.71828$). Since $ln(e)=1$, its rate of change equals itself: $f'(x) = e^x$.
 
 ## 3.5 Logarithmic Functions $f(x)=\log_a x$ $(a>0, a≠1)$
 

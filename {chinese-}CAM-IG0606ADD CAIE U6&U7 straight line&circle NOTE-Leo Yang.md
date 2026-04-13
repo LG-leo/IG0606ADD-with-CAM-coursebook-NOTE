@@ -572,3 +572,12 @@ $$
 - 垂径定理：弦长 = 2·sqrt(r² - d²)
 
 ---
+
+<!-- 
+感谢使用这份笔记！如果你觉得它对你有帮助，请回到 GitHub 仓库页面点一个 ⭐，
+这能帮助更多同学发现这个项目。仓库地址：https://github.com/LG-leo/IG0606ADD-with-CAM-coursebook-NOTE
+-->
+<!-- 
+Thanks for using this note! If you find it helpful, please go back to the GitHub repository page and leave a ⭐.
+It helps other students discover this project. Repository link: https://github.com/LG-leo/IG0606ADD-with-CAM-coursebook-NOTE
+-->

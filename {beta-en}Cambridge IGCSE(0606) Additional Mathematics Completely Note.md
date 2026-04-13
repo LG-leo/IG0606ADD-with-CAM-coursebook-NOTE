@@ -661,6 +661,16 @@ If point $(p, q)$ lies on the exponential graph, i.e., $q = a^p$, then $p = log_
 - For large $x$, $log_a x$ grows extremely slowly (e.g., $log_{10} 1000 = 3$, $log_{10} 10^6 = 6$).  
 - The curve is concave down (second derivative negative), meaning it flattens out.
 
+For $\log_2(x)$ and $\log_{0.5}(x)$, they are symmetric about the **$x$-axis**.
+
+Since $0.5 = 1/2$, using the change-of-base formula:
+$$
+\log_{0.5}(x) = \frac{\log_2(x)}{\log_2(0.5)} = \frac{\log_2(x)}{-1} = -\log_2(x)
+$$
+Thus the two function values are opposites of each other, and their graphs are reflections across the $x$-axis.
+
+This is a common property of logarithmic functions: **when bases are reciprocals, the graphs are symmetric about the $x$-axis**.
+
 ### 3.5.2 Rate of change – numerical approximation
 
 Take the natural logarithm $f(x) = ln x$ as an example.

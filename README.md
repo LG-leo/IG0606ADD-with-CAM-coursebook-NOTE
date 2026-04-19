@@ -56,7 +56,7 @@ You are free to share and adapt for **non-commercial purposes**, with attributio
 
 ## 📬 Links
 
-- **GitHub**: [https://github.com/LG-leo/IG0606ADD-with-CAM-coursebook-NOTE](https://github.com/LG-leo/IG0606ADD-with-CAM-coursebook-NOTE)
+- **GitHub**: [https://github.com/LG_leo/IG0606ADD_NOTEwithCAMcoursebook](https://github.com/LG-leo/IGCSE-Additional-Mathematics-Notes-0606) 
 - **GitCode (China mirror)**: [https://gitcode.com/oiiioiiiooiiioio/IG0606ADD_NOTEwithCAMcoursebook](https://gitcode.com/oiiioiiiooiiioio/IG0606ADD_NOTEwithCAMcoursebook)
 
 ## 💬 About this project

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lg-leo.github.io/IG0606ADD-with-CAM-coursebook-NOTE/sitemap.xml

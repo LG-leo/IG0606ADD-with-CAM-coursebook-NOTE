@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - main
-  # 可选：每周自动运行一次
   schedule:
     - cron: '0 0 * * 0'
+
+# 关键：授予写入仓库的权限
+permissions:
+  contents: write
 
 jobs:
   sitemap:
@@ -19,9 +22,7 @@ jobs:
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://lg-leo.github.io/IG0606ADD-with-CAM-coursebook-NOTE/
-          # 排除不需要出现在 sitemap 中的文件类型（图片、样式等）
           exclude-file-extensions: "png,jpg,jpeg,gif,svg,ico,css,js,map,json,webmanifest"
-          # 是否包含隐藏文件（通常不需要）
           include-hidden: false
 
       - name: Commit and push changes

@@ -106,3 +106,11 @@ Is the most important, completely Note：[点击查看 - Cambridge IGCSE 0606 Ad
 
 - **Honest opinion**  
   The official textbook is, frankly, poorly written. I had to rewrite and supplement large parts of Topics 2–4 on my own. This note reflects my own understanding and might help you avoid the same frustration.
+
+
+---
+
+<?xml version="1.0"?>
+<users>
+    <user>CAAB53FA05D993C4390715E328742117</user>
+</users>

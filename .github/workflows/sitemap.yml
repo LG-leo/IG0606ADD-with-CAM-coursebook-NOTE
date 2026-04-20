@@ -5,11 +5,11 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * 0'   # 每周运行一次，可选
-  workflow_dispatch:       # 允许手动触发
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
 
 permissions:
-  contents: write          # 关键：授予推送代码的权限
+  contents: write
 
 jobs:
   sitemap:
@@ -22,14 +22,10 @@ jobs:
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://lg-leo.github.io/IG0606ADD-with-CAM-coursebook-NOTE/
-          # 排除不需要的文件类型（图片、样式等）
-          exclude-file-extensions: "png,jpg,jpeg,gif,svg,ico,css,js,map,json,webmanifest"
-          # 排除特定文件夹（如果有）
-          exclude-paths: "images,assets"
-          # 是否包含隐藏文件
-          include-hidden: false
-          # 是否包含 .md 文件（会转换为 .html 链接）
-          include-md: true
+          include-html: true
+          include-pdf: true
+          additional-extensions: "md"
+          drop-html-extension: false
 
       - name: Commit and push changes
         run: |

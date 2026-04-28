@@ -1,16 +1,3 @@
-
-
-
-
-
-Now I have the full content. Let me write the revised version with:
-
-1. **Renumbered**: Chapter 0 → Chapter 1, and all subsequent chapters shifted accordingly
-2. **Expanded explanations**: more narrative, less bullet-point style
-3. **No forbidden LaTeX**: using only $ $ with plain Unicode math notation (no \frac, \sqrt, \[ \])
-
----
-
 # IGCSE 0606 Additional Mathematics Complete Notes (English)
 
 > These notes are based on the Cambridge IGCSE Additional Mathematics (0606) 2025-2027 syllabus, arranged in a cognitive order covering all topics. Includes derivations, typical examples, and common pitfalls. Suitable for self-study.

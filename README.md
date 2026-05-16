@@ -44,7 +44,7 @@ You are free to share and adapt for **non-commercial purposes**, with attributio
 | 12 | Series | ✅ (beta) |
 | 13 | Vectors in two dimensions | 📅 planned |
 | 14 | Calculus | ✅ (beta) |
-| 15 |completely | ✅ (beta)|
+| 15 |completely | ✅ |
 
 ## 🚀 How to use
 

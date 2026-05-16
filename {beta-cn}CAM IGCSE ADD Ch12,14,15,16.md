@@ -1,11 +1,7 @@
 # 不定积分与求导：变化率视角
-- This note is maintained by LG-leo.
-- If you find it helpful, feel free to follow me or leave a ⭐ on GitHub.
-- It helps me keep producing more free study resources.
-- Check out my other notes: https://github.com/LG-leo?tab=repositories
 - 这份笔记由 LG-leo 整理和维护。如果你觉得这份笔记对你有帮助，欢迎在 GitHub 上关注我或给我一个 ⭐，这能帮助我持续产出更多免费的学习资源。
 - 我的其他课程笔记：https://github.com/LG-leo?tab=repositories
-- 中英版本
+- This note is maintained by LG-leo. If you find it helpful, feel free to follow me or leave a ⭐ on GitHub. It helps me keep producing more free study resources. Check out my other notes: https://github.com/LG-leo?tab=repositories
 ## 1. 变化率与导数的基本概念
 
 导数表示函数在某一点的变化快慢。对于函数 y = f(x)，导数记作 dy/dx 或 f'(x)。

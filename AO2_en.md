@@ -1,7 +1,13 @@
 # 📘 IGCSE 0606 Additional Mathematics — Complete AO2 Question Classification (160 Types)
 
 > **AO2 (Analyse, interpret and communicate mathematically)** accounts for **45–55%** of the paper, covering all 14 syllabus topics. Below is the **complete 160-type classification** after two rounds of in-depth mining.
-
+- This note is maintained by LG-leo.
+- If you find it helpful, feel free to follow me or leave a ⭐ on GitHub.
+- It helps me keep producing more free study resources.
+- Check out my other notes: https://github.com/LG-leo?tab=repositories
+- 这份笔记由 LG-leo 整理和维护。如果你觉得这份笔记对你有帮助，欢迎在 GitHub 上关注我或给我一个 ⭐，这能帮助我持续产出更多免费的学习资源。
+- 我的其他课程笔记：https://github.com/LG-leo?tab=repositories
+- 中英版本
 ---
 
 ## 1. Functions — 12 Types

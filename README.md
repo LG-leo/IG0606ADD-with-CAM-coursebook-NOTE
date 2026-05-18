@@ -87,9 +87,9 @@ It is recommended to **Clone** the repository so you can easily `git pull` futur
 > This guide is a personal study compilation. Some content is adapted from the original textbook for educational, non‑commercial purposes. It does not replace the original textbook.
 
 # 📚 My best Note
-Is the most important, completely Note：[点击查看 - Cambridge IGCSE 0606 Additional Mathematics Complete Note](https://github.com/LG-leo/IG0606ADD-with-CAM-coursebook-NOTE/blob/main/%7Bbeta-en%7DCambridge%20IGCSE(0606)%20Additional%20Mathematics%20Completely%20Note.md)
+Is the most important, completely Note：[[点击查看 - Cambridge IGCSE 0606 Additional Mathematics Complete Note](https://github.com/LG-leo/IG0606ADD-with-CAM-coursebook-NOTE/blob/main/%7Bbeta-en%7DCambridge%20IGCSE(0606)%20Additional%20Mathematics%20Completely%20Note.md)](https://github.com/LG-leo/IGCSE-Additional-Mathematics-Notes-0606/blob/main/CAMbridge%20IGCSE(0606)%20Additional%20Mathematics%20Completely%20Note_beta.md)
 
-[点击查看 - Cambridge IGCSE 0606 Additional Mathematics Complete Note](https://github.com/LG-leo/IG0606ADD-with-CAM-coursebook-NOTE/blob/main/%7Bbeta-cn%7DCAM%20IGCSE(0606)%20Additional%20Mathematics%20Complete%20Notes.md)
+[[点击查看 - Cambridge IGCSE 0606 Additional Mathematics Complete Note](https://github.com/LG-leo/IG0606ADD-with-CAM-coursebook-NOTE/blob/main/%7Bbeta-cn%7DCAM%20IGCSE(0606)%20Additional%20Mathematics%20Complete%20Notes.md)](https://github.com/LG-leo/IGCSE-Additional-Mathematics-Notes-0606/blob/main/CAM%20IGCSE(0606)%20Additional%20Mathematics%20Complete%20Notes_beta.md)
 
 
 ---

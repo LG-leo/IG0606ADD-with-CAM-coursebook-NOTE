@@ -1630,3 +1630,603 @@ $$
 
 ---
 
+
+继续！以下接续第 2 章 2.3.5 节之后的内容：
+
+---
+
+### 2.3.5 幂法则
+
+从上面的推导中，我们可以观察出一个模式：
+
+| $`f(x)`$ | $`f'(x)`$ |
+|:---:|:---:|
+| $`x^2`$ | $`2x`$ |
+| $`x^3`$ | $`3x^2`$ |
+| $`x^1`$ | $`1`$（即 $`1 \cdot x^0`$） |
+| $`1/x = x^{-1}`$ | $`-1/x^2 = -x^{-2}`$ |
+
+这个模式就是**幂法则**：对任意实数 $`n`$，
+
+$$
+\boxed{`\dfrac{d}{dx}(x^n) = n x^{n-1}`}
+$$
+
+> **幂法则的完整推导**（利用二项式定理展开，仅对正整数 $`n`$）：
+>
+> 考虑 $`f(x) = x^n`$，其中 $`n`$ 为正整数。展开 $`(x + h)^n`$：
+> $$
+`(x + h)^n = x^n + n x^{n-1}h + \dfrac{n(n-1)}{2}x^{n-2}h^2 + \dfrac{n(n-1)(n-2)}{6}x^{n-3}h^3 + \dots + h^n`$$
+> 因此：
+> $$
+`\begin{aligned}
+f'(x) &= \lim_{h \to 0} \frac{x^n + n x^{n-1}h + \frac{n(n-1)}{2}x^{n-2}h^2 + \dots + h^n - x^n}{h} \\
+&= \lim_{h \to 0} \left( n x^{n-1} + \frac{n(n-1)}{2}x^{n-2}h + \dots + h^{n-1} \right) \\
+&= n x^{n-1}
+\end{aligned}`$$
+> 因为所有含 $`h`$ 的项在 $`h \to 0`$ 时都趋于 0。
+
+---
+
+### 2.3.6 变化率在向量中的应用：运动学
+
+现在回到向量的语境中。如果质点的位置向量 $`\mathbf{r}(t)`$ 随时间变化，那么它的速度向量和加速度向量就是位置向量对时间的变化率。
+
+设 $`\mathbf{r}(t) = x(t)\mathbf{i} + y(t)\mathbf{j}`$，则：
+
+$$
+`\mathbf{v}(t) = \frac{d\mathbf{r}}{dt} = \frac{dx}{dt}\mathbf{i} + \frac{dy}{dt}\mathbf{j}`
+$$
+
+$$
+`\mathbf{a}(t) = \frac{d\mathbf{v}}{dt} = \frac{d^2\mathbf{r}}{dt^2} = \frac{d^2x}{dt^2}\mathbf{i} + \frac{d^2y}{dt^2}\mathbf{j}`
+$$
+
+也就是说，对向量函数求导，就是对它的各个分量分别求导。
+
+---
+
+### 2.3.7 从加速度到速度和位置（积分铺垫）
+
+在物理中，加速度 $`\mathbf{a}(t)`$ 是速度 $`\mathbf{v}(t)`$ 的变化率。如果我们知道加速度并想恢复出速度，需要做微分的逆运算——这称为**积分**（将在第 7 章详细学习）。
+
+基本关系是：
+
+- 速度 $`\mathbf{v}(t) = \int \mathbf{a}(t) \, dt + \mathbf{v}_0`$（其中 $`\mathbf{v}_0`$ 是初始速度）
+- 位置 $`\mathbf{r}(t) = \int \mathbf{v}(t) \, dt + \mathbf{r}_0`$（其中 $`\mathbf{r}_0`$ 是初始位置）
+
+或者用定积分的形式（更适合已知确定时间段的问题）：
+
+$$
+`\mathbf{v}(t) = \mathbf{v}_0 + \int_0^t \mathbf{a}(u) \, du,\quad \mathbf{r}(t) = \mathbf{r}_0 + \int_0^t \mathbf{v}(u) \, du`
+$$
+
+这里先建立直观理解：**微分**是求变化率（位置 → 速度 → 加速度），**积分**是求累积量（加速度 → 速度 → 位置），两者互为逆运算。
+
+---
+
+### 📌 例题 2.4：变化率入门
+
+**例题 1**（用极限定义求瞬时速度）
+
+一个质点的位移（单位：米）与时间（单位：秒）的关系为 $`s(t) = 3t^2 - 2t + 1`$。
+
+（a）求从 $`t = 2`$ 到 $`t = 2 + h`$ 的平均速度。
+（b）利用极限求 $`t = 2`$ 时的瞬时速度。
+
+**思路分析**：
+- 平均速度 = $`\dfrac{s(2+h) - s(2)}{h}`$
+- 瞬时速度 = $`\displaystyle\lim_{h \to 0}`$ 平均速度
+
+**解**：
+
+（a）
+
+$$
+`\begin{aligned}
+\text{平均速度} &= \frac{s(2 + h) - s(2)}{h} \\
+&= \frac{[3(2+h)^2 - 2(2+h) + 1] - [3(4) - 4 + 1]}{h} \\
+&= \frac{[3(4 + 4h + h^2) - 4 - 2h + 1] - [12 - 4 + 1]}{h} \\
+&= \frac{[12 + 12h + 3h^2 - 4 - 2h + 1] - 9}{h} \\
+&= \frac{[9 + 10h + 3h^2] - 9}{h} \\
+&= \frac{10h + 3h^2}{h} = 10 + 3h
+\end{aligned}`
+$$
+
+（b）瞬时速度是 $`h \to 0`$ 时平均速度的极限：
+
+$$
+`v(2) = \lim_{h \to 0} (10 + 3h) = 10\ \text{m/s}`
+$$
+
+因此质点在 $`t = 2`$ 秒时的瞬时速度为 $`10\ \text{m/s}`$。
+
+> **验证**：用幂法则直接求导：$`s'(t) = 6t - 2`$，$`s'(2) = 12 - 2 = 10`$，一致。✓
+
+---
+
+**例题 2**（用极限定义求一般导数 + 幂法则验证）
+
+用导数的极限定义求 $`f(x) = 4x - x^2`$ 的导数 $`f'(x)`$。
+
+**解**：
+
+$$
+`\begin{aligned}
+f'(x) &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \\
+&= \lim_{h \to 0} \frac{[4(x + h) - (x + h)^2] - [4x - x^2]}{h} \\
+&= \lim_{h \to 0} \frac{4x + 4h - (x^2 + 2xh + h^2) - 4x + x^2}{h} \\
+&= \lim_{h \to 0} \frac{4h - 2xh - h^2}{h} \\
+&= \lim_{h \to 0} (4 - 2x - h) \\
+&= 4 - 2x
+\end{aligned}`
+$$
+
+因此 $`f'(x) = 4 - 2x`$。
+
+**验证**：使用幂法则对 $`f(x) = 4x - x^2`$ 逐项求导：
+- $`\dfrac{d}{dx}(4x) = 4 \cdot 1 \cdot x^{0} = 4`$
+- $`\dfrac{d}{dx}(-x^2) = -2x^{1} = -2x`$
+- 相加得 $`f'(x) = 4 - 2x`$，与极限结果一致。✓
+
+---
+
+**例题 3**（向量的变化率 + 积分逆运算）
+
+一个质点在平面内运动，它的位置向量为：
+
+$$
+`\mathbf{r}(t) = (t^3 - 3t)\mathbf{i} + (t^2 - 2t)\mathbf{j}`
+$$
+
+其中 $`t`$ 以秒为单位，位置以米为单位。
+
+（a）求速度向量 $`\mathbf{v}(t)`$。
+（b）求加速度向量 $`\mathbf{a}(t)`$。
+（c）求 $`t = 2`$ 秒时的速度和加速度向量。
+（d）已知该质点的加速度恒为 $`\mathbf{a}(t) = 6t\mathbf{i} + 2\mathbf{j}`$，初速度 $`\mathbf{v}_0 = -3\mathbf{i} - 2\mathbf{j}`$，初始位置 $`\mathbf{r}_0 = \mathbf{0}`$。用积分求 $`\mathbf{v}(t)`$ 和 $`\mathbf{r}(t)`$，验证与（a）（b）一致。
+
+**思路分析**：
+- 速度 = 位置的导数（分量分别求导）
+- 加速度 = 速度的导数（分量分别求导）
+- 积分是微分的逆运算：已知加速度，积分一次得速度（加常数），再积分一次得位置（加常数）
+- 常数由初始条件确定
+
+**解**：
+
+（a）速度是位置对时间的导数，对各分量分别求导：
+
+$$
+`\mathbf{v}(t) = \frac{d\mathbf{r}}{dt} = \frac{d}{dt}(t^3 - 3t)\,\mathbf{i} + \frac{d}{dt}(t^2 - 2t)\,\mathbf{j}`
+$$
+
+使用幂法则：
+- $`\dfrac{d}{dt}(t^3) = 3t^2`$
+- $`\dfrac{d}{dt}(-3t) = -3`$
+- $`\dfrac{d}{dt}(t^2) = 2t`$
+- $`\dfrac{d}{dt}(-2t) = -2`$
+
+因此：
+
+$$
+`\mathbf{v}(t) = (3t^2 - 3)\mathbf{i} + (2t - 2)\mathbf{j}`
+$$
+
+（b）加速度是速度对时间的导数：
+
+$$
+`\mathbf{a}(t) = \frac{d\mathbf{v}}{dt} = \frac{d}{dt}(3t^2 - 3)\,\mathbf{i} + \frac{d}{dt}(2t - 2)\,\mathbf{j}`
+$$
+
+$$
+`\mathbf{a}(t) = (6t)\mathbf{i} + 2\mathbf{j}`
+$$
+
+（c）代入 $`t = 2`$：
+
+$$
+`\mathbf{v}(2) = (3 \times 4 - 3)\mathbf{i} + (4 - 2)\mathbf{j} = 9\mathbf{i} + 2\mathbf{j}\ \text{m/s}`
+$$
+
+速度的大小：$`|\mathbf{v}(2)| = \sqrt{9^2 + 2^2} = \sqrt{81 + 4} = \sqrt{85} \approx 9.22\ \text{m/s}`$
+
+$$
+`\mathbf{a}(2) = (6 \times 2)\mathbf{i} + 2\mathbf{j} = 12\mathbf{i} + 2\mathbf{j}\ \text{m/s}^2`
+$$
+
+加速度的大小：$`|\mathbf{a}(2)| = \sqrt{12^2 + 2^2} = \sqrt{144 + 4} = \sqrt{148} = 2\sqrt{37} \approx 12.17\ \text{m/s}^2`$
+
+（d）已知 $`\mathbf{a}(t) = (6t)\mathbf{i} + 2\mathbf{j}`$，对加速度积分求速度：
+
+$$
+`\mathbf{v}(t) = \int \mathbf{a}(t) \, dt = \left(\int 6t \, dt\right)\mathbf{i} + \left(\int 2 \, dt\right)\mathbf{j}`
+$$
+
+$$
+`= (3t^2 + C_1)\mathbf{i} + (2t + C_2)\mathbf{j}`
+$$
+
+由 $`\mathbf{v}_0 = \mathbf{v}(0) = -3\mathbf{i} - 2\mathbf{j}`$，代入 $`t = 0`$ 得 $`C_1 = -3`$，$`C_2 = -2`$。所以：
+
+$$
+`\mathbf{v}(t) = (3t^2 - 3)\mathbf{i} + (2t - 2)\mathbf{j}`
+$$
+
+与（a）一致。✓
+
+再对速度积分求位置：
+
+$$
+`\mathbf{r}(t) = \int \mathbf{v}(t) \, dt = \left(\int (3t^2 - 3) \, dt\right)\mathbf{i} + \left(\int (2t - 2) \, dt\right)\mathbf{j}`
+$$
+
+$$
+`= (t^3 - 3t + D_1)\mathbf{i} + (t^2 - 2t + D_2)\mathbf{j}`
+$$
+
+由 $`\mathbf{r}_0 = \mathbf{r}(0) = \mathbf{0}`$，代入 $`t = 0`$ 得 $`D_1 = 0`$，$`D_2 = 0`$。所以：
+
+$$
+`\mathbf{r}(t) = (t^3 - 3t)\mathbf{i} + (t^2 - 2t)\mathbf{j}`
+$$
+
+与原始位置函数一致。✓
+
+---
+
+## 2.4 本章练习题
+
+以下练习题按考试难度编写，涵盖本章所有知识点，题号前面标注了对应的考纲编号。
+
+---
+
+**13.1–13.3 题组：向量基础与几何**
+
+**1.** 已知 $`\mathbf{a} = 2\mathbf{i} - \mathbf{j}`$，$`\mathbf{b} = \mathbf{i} + 3\mathbf{j}`$。
+
+（a）求 $`\mathbf{a} + 2\mathbf{b}`$。
+（b）求 $`|2\mathbf{a} - \mathbf{b}|`$。
+（c）求与 $`3\mathbf{a} + \mathbf{b}`$ 同方向的单位向量。
+
+---
+
+**2.** 在 $`\triangle ABC`$ 中，$`P`$ 是 $`BC`$ 的中点，$`Q`$ 是 $`CA`$ 的中点。设 $`\overrightarrow{AB} = \mathbf{p}`$，$`\overrightarrow{AC} = \mathbf{q}`$。
+
+（a）用 $`\mathbf{p}`$ 和 $`\mathbf{q}`$ 表示 $`\overrightarrow{BC}`$。
+（b）用 $`\mathbf{p}`$ 和 $`\mathbf{q}`$ 表示 $`\overrightarrow{PQ}`$。
+（c）证明 $`PQ \parallel AB`$ 且 $`PQ = \frac{1}{2} AB`$。
+
+---
+
+**3.** 三点 $`A`$、$`B`$、$`C`$ 的位置向量分别为 $`\mathbf{a} = 3\mathbf{i} + 2\mathbf{j}`$，$`\mathbf{b} = 5\mathbf{i} + 6\mathbf{j}`$，$`\mathbf{c} = 9\mathbf{i} + 14\mathbf{j}`$。
+
+（a）证明 $`A`$、$`B`$、$`C`$ 三点共线。
+（b）求 $`AB:BC`$ 的比值。
+
+---
+
+**13.3–13.4 题组：向量几何与运动**
+
+**4.** 在 $`\triangle OAB`$ 中，$`P`$ 在 $`OA`$ 上且 $`OP:PA = 1:2`$，$`Q`$ 在 $`AB`$ 上且 $`AQ:QB = 2:3`$。设 $`\overrightarrow{OA} = \mathbf{a}`$，$`\overrightarrow{OB} = \mathbf{b}`$。
+
+（a）用 $`\mathbf{a}`$ 和 $`\mathbf{b}`$ 表示 $`\overrightarrow{OP}`$。
+（b）用 $`\mathbf{a}`$ 和 $`\mathbf{b}`$ 表示 $`\overrightarrow{OQ}`$。
+（c）用 $`\mathbf{a}`$ 和 $`\mathbf{b}`$ 表示 $`\overrightarrow{PQ}`$。
+
+---
+
+**5.** 船 $`A`$ 从点 $`(0, 5)`$ 出发，以速度 $`\mathbf{v}_A = (2\mathbf{i} + 3\mathbf{j})\ \text{km/h}`$ 航行。船 $`B`$ 从点 $`(10, 0)`$ 出发，以速度 $`\mathbf{v}_B = (-3\mathbf{i} + 4\mathbf{j})\ \text{km/h}`$ 航行。两船同时出发。
+
+（a）写出两船的位置向量 $`\mathbf{r}_A(t)`$ 和 $`\mathbf{r}_B(t)`$。
+（b）判断两船是否会相撞。
+
+---
+
+**6.** 一艘船在静水中的速度为 $`10\ \text{m/s}`$，船头指向正北方向。水流的速度为 $`6\ \text{m/s}`$ 流向正东方向。
+
+（a）求船相对于地面的合速度向量。
+（b）求合速度的大小和方向（与正北方向的夹角）。
+
+---
+
+**14.1 题组：变化率入门**
+
+**7.** 一个质点的位移 $`s`$（米）与时间 $`t`$（秒）的关系为 $`s(t) = 4t^2 + 3t`$。
+
+（a）求从 $`t = 1`$ 到 $`t = 1 + h`$ 的平均速度。
+（b）利用极限求 $`t = 1`$ 时的瞬时速度。
+
+---
+
+**8.** 一个质点在平面内运动，它的位置向量为：
+
+$$
+`\mathbf{r}(t) = (2t^2 + t)\mathbf{i} + (3t - 1)\mathbf{j}`
+$$
+
+（a）求速度向量 $`\mathbf{v}(t)`$。
+（b）求加速度向量 $`\mathbf{a}(t)`$。
+（c）求 $`t = 2`$ 时速度的大小。
+
+---
+
+**综合题**
+
+**9.** 在平行四边形 $`ABCD`$ 中，$`A`$、$`B`$、$`C`$ 的位置向量分别为 $`\mathbf{a} = 2\mathbf{i} + \mathbf{j}`$，$`\mathbf{b} = 5\mathbf{i} + 3\mathbf{j}`$，$`\mathbf{c} = 4\mathbf{i} + 6\mathbf{j}`$。
+
+（a）求 $`D`$ 的位置向量。
+（b）判断 $`\overrightarrow{AB}`$ 与 $`\overrightarrow{AD}`$ 是否垂直。
+（c）求平行四边形 $`ABCD`$ 的面积。
+
+> 提示：平行四边形的面积 $`= |\overrightarrow{AB}| \times |\overrightarrow{AD}| \times \sin\theta`$，其中 $`\theta`$ 是两边的夹角。或者用行列式公式：面积 $`= |x_1 y_2 - x_2 y_1|`$，其中 $`\overrightarrow{AB} = (x_1, y_1)`$，$`\overrightarrow{AD} = (x_2, y_2)`$。
+
+---
+
+## 练习题答案
+
+**1.**
+
+（a）$`\mathbf{a} + 2\mathbf{b} = (2\mathbf{i} - \mathbf{j}) + 2(\mathbf{i} + 3\mathbf{j}) = (2\mathbf{i} - \mathbf{j}) + (2\mathbf{i} + 6\mathbf{j}) = 4\mathbf{i} + 5\mathbf{j}`$
+
+（b）$`2\mathbf{a} - \mathbf{b} = 2(2\mathbf{i} - \mathbf{j}) - (\mathbf{i} + 3\mathbf{j}) = (4\mathbf{i} - 2\mathbf{j}) - (\mathbf{i} + 3\mathbf{j}) = 3\mathbf{i} - 5\mathbf{j}`$
+
+$`|2\mathbf{a} - \mathbf{b}| = \sqrt{3^2 + (-5)^2} = \sqrt{9 + 25} = \sqrt{34}`$
+
+（c）$`3\mathbf{a} + \mathbf{b} = 3(2\mathbf{i} - \mathbf{j}) + (\mathbf{i} + 3\mathbf{j}) = (6\mathbf{i} - 3\mathbf{j}) + (\mathbf{i} + 3\mathbf{j}) = 7\mathbf{i}`$
+
+$`|7\mathbf{i}| = 7`$，所以单位向量 $`= \dfrac{7\mathbf{i}}{7} = \mathbf{i}`$
+
+---
+
+**2.**
+
+（a）$`\overrightarrow{BC} = \overrightarrow{BA} + \overrightarrow{AC} = -\overrightarrow{AB} + \overrightarrow{AC} = -\mathbf{p} + \mathbf{q}`$
+
+（b）$`P`$ 是 $`BC`$ 的中点，所以 $`\mathbf{r}_P = \dfrac{\mathbf{r}_B + \mathbf{r}_C}{2}`$。$`Q`$ 是 $`CA`$ 的中点，所以 $`\mathbf{r}_Q = \dfrac{\mathbf{r}_C + \mathbf{r}_A}{2}`$。
+
+$$
+`\begin{aligned}
+\overrightarrow{PQ} &= \mathbf{r}_Q - \mathbf{r}_P \\
+&= \frac{\mathbf{r}_C + \mathbf{r}_A}{2} - \frac{\mathbf{r}_B + \mathbf{r}_C}{2} \\
+&= \frac{\mathbf{r}_A - \mathbf{r}_B}{2} \\
+&= \frac{1}{2}\overrightarrow{BA} = -\frac{1}{2}\overrightarrow{AB} = -\frac{1}{2}\mathbf{p}
+\end{aligned}`
+$$
+
+（c）由（b）得 $`\overrightarrow{PQ} = -\dfrac{1}{2}\mathbf{p} = -\dfrac{1}{2}\overrightarrow{AB}`$，所以 $`\overrightarrow{PQ} \parallel \overrightarrow{AB}`$ 且 $`|\overrightarrow{PQ}| = \dfrac{1}{2}|\overrightarrow{AB}|`$，即 $`PQ = \dfrac{1}{2}AB`$。✓
+
+> 这条性质叫做**三角形中位线定理**：三角形两边中点的连线平行于第三边且等于第三边的一半。
+
+---
+
+**3.**
+
+（a）
+
+$$
+`\overrightarrow{AB} = \mathbf{b} - \mathbf{a} = (5\mathbf{i} + 6\mathbf{j}) - (3\mathbf{i} + 2\mathbf{j}) = 2\mathbf{i} + 4\mathbf{j}`
+$$
+
+$$
+`\overrightarrow{BC} = \mathbf{c} - \mathbf{b} = (9\mathbf{i} + 14\mathbf{j}) - (5\mathbf{i} + 6\mathbf{j}) = 4\mathbf{i} + 8\mathbf{j}`
+$$
+
+$`\overrightarrow{BC} = 2(2\mathbf{i} + 4\mathbf{j}) = 2\overrightarrow{AB}`$，存在 $`k = 2`$ 使得 $`\overrightarrow{BC} = k\overrightarrow{AB}`$，所以 $`A`$、$`B`$、$`C`$ 共线。
+
+（b）$`|\overrightarrow{AB}| = \sqrt{2^2 + 4^2} = \sqrt{4 + 16} = \sqrt{20} = 2\sqrt{5}`$
+
+$`|\overrightarrow{BC}| = \sqrt{4^2 + 8^2} = \sqrt{16 + 64} = \sqrt{80} = 4\sqrt{5}`$
+
+所以 $`AB:BC = 2\sqrt{5}:4\sqrt{5} = 1:2`$
+
+---
+
+**4.**
+
+（a）$`OP:PA = 1:2`$，所以 $`OP:OA = 1:3`$，即 $`\overrightarrow{OP} = \dfrac{1}{3}\mathbf{a}`$
+
+（b）$`AQ:QB = 2:3`$，所以 $`AQ:AB = 2:5`$，$`Q`$ 从 $`A`$ 到 $`B`$ 的 $`\dfrac{2}{5}`$ 处。
+
+$$
+`\begin{aligned}
+\overrightarrow{OQ} &= \overrightarrow{OA} + \frac{2}{5}\overrightarrow{AB} \\
+&= \mathbf{a} + \frac{2}{5}(\mathbf{b} - \mathbf{a}) \\
+&= \mathbf{a} + \frac{2}{5}\mathbf{b} - \frac{2}{5}\mathbf{a} \\
+&= \frac{3}{5}\mathbf{a} + \frac{2}{5}\mathbf{b}
+\end{aligned}`
+$$
+
+（c）
+
+$$
+`\overrightarrow{PQ} = \overrightarrow{OQ} - \overrightarrow{OP} = \left(\frac{3}{5}\mathbf{a} + \frac{2}{5}\mathbf{b}\right) - \frac{1}{3}\mathbf{a} = \left(\frac{3}{5} - \frac{1}{3}\right)\mathbf{a} + \frac{2}{5}\mathbf{b}`
+$$
+
+通分：$`\dfrac{3}{5} - \dfrac{1}{3} = \dfrac{9}{15} - \dfrac{5}{15} = \dfrac{4}{15}`$
+
+所以 $`\overrightarrow{PQ} = \dfrac{4}{15}\mathbf{a} + \dfrac{2}{5}\mathbf{b}`$
+
+---
+
+**5.**
+
+（a）
+
+$$
+`\mathbf{r}_A(t) = (0, 5)^\mathrm{T} + (2, 3)^\mathrm{T}\,t = (2t,\; 5 + 3t)^\mathrm{T}`
+$$
+
+$$
+`\mathbf{r}_B(t) = (10, 0)^\mathrm{T} + (-3, 4)^\mathrm{T}\,t = (10 - 3t,\; 4t)^\mathrm{T}`
+$$
+
+（b）令 $`\mathbf{r}_A(t) = \mathbf{r}_B(t)`$：
+
+$$
+`\begin{cases}
+2t = 10 - 3t \;\Longrightarrow\; 5t = 10 \;\Longrightarrow\; t = 2 \\[4pt]
+5 + 3t = 4t \;\Longrightarrow\; 5 = t \;\Longrightarrow\; t = 5
+\end{cases}`
+$$
+
+两个 $`t`$ 值不相等（$`2 \neq 5`$），所以两船不会相撞。
+
+---
+
+**6.**
+
+（a）设正北为 $`+y`$ 轴，正东为 $`+x`$ 轴。
+
+船相对于水的速度：$`\mathbf{v}_{B/W} = 10\mathbf{j}`$
+水相对于地面的速度：$`\mathbf{v}_{W/G} = 6\mathbf{i}`$
+
+合速度：$`\mathbf{v}_{B/G} = 6\mathbf{i} + 10\mathbf{j}`$
+
+（b）大小：$`|\mathbf{v}_{B/G}| = \sqrt{6^2 + 10^2} = \sqrt{36 + 100} = \sqrt{136} = 2\sqrt{34} \approx 11.66\ \text{m/s}`$
+
+方向：设 $`\theta`$ 为与正北方向的夹角。
+
+$$
+`\tan\theta = \frac{6}{10} = 0.6 \;\Longrightarrow\; \theta = \arctan(0.6) \approx 30.96^\circ`
+$$
+
+所以方向为东偏北 $`30.96^\circ`$（或北偏东 $`59.04^\circ`$）。
+
+---
+
+**7.**
+
+（a）
+
+$$
+`\begin{aligned}
+\frac{s(1+h) - s(1)}{h} &= \frac{[4(1+h)^2 + 3(1+h)] - [4 + 3]}{h} \\
+&= \frac{[4(1 + 2h + h^2) + 3 + 3h] - 7}{h} \\
+&= \frac{4 + 8h + 4h^2 + 3 + 3h - 7}{h} \\
+&= \frac{11h + 4h^2}{h} = 11 + 4h
+\end{aligned}`
+$$
+
+（b）$`v(1) = \displaystyle\lim_{h \to 0} (11 + 4h) = 11\ \text{m/s}`$
+
+验证：$`s'(t) = 8t + 3`$，$`s'(1) = 8 + 3 = 11`$ ✓
+
+---
+
+**8.**
+
+（a）$`\mathbf{v}(t) = \dfrac{d\mathbf{r}}{dt} = (4t + 1)\mathbf{i} + 3\mathbf{j}`$
+
+（b）$`\mathbf{a}(t) = \dfrac{d\mathbf{v}}{dt} = 4\mathbf{i}`$
+
+（c）$`\mathbf{v}(2) = (4 \times 2 + 1)\mathbf{i} + 3\mathbf{j} = 9\mathbf{i} + 3\mathbf{j}`$
+
+$`|\mathbf{v}(2)| = \sqrt{9^2 + 3^2} = \sqrt{81 + 9} = \sqrt{90} = 3\sqrt{10} \approx 9.49\ \text{m/s}`$
+
+---
+
+**9.**
+
+（a）平行四边形 $`ABCD`$ 中，$`\overrightarrow{AD} = \overrightarrow{BC}`$。
+
+$$
+`\overrightarrow{BC} = \mathbf{c} - \mathbf{b} = (4\mathbf{i} + 6\mathbf{j}) - (5\mathbf{i} + 3\mathbf{j}) = -\mathbf{i} + 3\mathbf{j}`
+$$
+
+所以 $`\mathbf{d} = \mathbf{a} + \overrightarrow{BC} = (2\mathbf{i} + \mathbf{j}) + (-\mathbf{i} + 3\mathbf{j}) = \mathbf{i} + 4\mathbf{j}`$
+
+（b）$`\overrightarrow{AB} = \mathbf{b} - \mathbf{a} = (5\mathbf{i} + 3\mathbf{j}) - (2\mathbf{i} + \mathbf{j}) = 3\mathbf{i} + 2\mathbf{j}`$
+
+$`\overrightarrow{AD} = \mathbf{d} - \mathbf{a} = (\mathbf{i} + 4\mathbf{j}) - (2\mathbf{i} + \mathbf{j}) = -\mathbf{i} + 3\mathbf{j}`$
+
+点积：$`\overrightarrow{AB} \cdot \overrightarrow{AD} = (3)(-1) + (2)(3) = -3 + 6 = 3 \neq 0`$
+
+所以 $`\overrightarrow{AB}`$ 与 $`\overrightarrow{AD}`$ **不垂直**。
+
+（c）方法一（用叉积的行列式公式）：
+
+$$
+`\text{面积} = |x_1 y_2 - x_2 y_1|`
+$$
+
+其中 $`\overrightarrow{AB} = (3, 2)`$，$`\overrightarrow{AD} = (-1, 3)`$。
+
+$$
+`\text{面积} = |3 \times 3 - 2 \times (-1)| = |9 + 2| = 11`
+$$
+
+方法二（用 $`|\overrightarrow{AB}| \cdot |\overrightarrow{AD}| \cdot \sin\theta`$）：
+
+$$
+`|\overrightarrow{AB}| = \sqrt{3^2 + 2^2} = \sqrt{13},\quad |\overrightarrow{AD}| = \sqrt{(-1)^2 + 3^2} = \sqrt{10}`
+$$
+
+由点积 $`\overrightarrow{AB} \cdot \overrightarrow{AD} = |\overrightarrow{AB}||\overrightarrow{AD}|\cos\theta`$：
+
+$$
+`3 = \sqrt{13} \cdot \sqrt{10} \cdot \cos\theta \;\Longrightarrow\; \cos\theta = \frac{3}{\sqrt{130}}`
+$$
+
+$$
+`\sin\theta = \sqrt{1 - \cos^2\theta} = \sqrt{1 - \frac{9}{130}} = \sqrt{\frac{121}{130}} = \frac{11}{\sqrt{130}}`
+$$
+
+$$
+`\text{面积} = \sqrt{13} \cdot \sqrt{10} \cdot \frac{11}{\sqrt{130}} = \sqrt{130} \cdot \frac{11}{\sqrt{130}} = 11`
+$$
+
+平行四边形的面积为 11 平方单位。✓
+
+---
+
+## 本章总结
+
+### 考纲覆盖核对
+
+| 考纲编号 | 内容 | 对应节次 | 例题 | 练习题 |
+|:---:|------|:---:|:---:|:---:|
+| 13.1 | 向量记号 | 2.1.1 | 2.1(1) | 1 |
+| 13.2 | 位置向量与单位向量 | 2.1.2, 2.1.4 | 2.1(1) | 1(c) |
+| 13.3 | 模、加减、数乘、向量几何 | 2.1.3, 2.1.5–2.1.8, 2.2.1 | 2.1, 2.2 | 1–4, 9 |
+| 13.4 | 速度合成与分解、相撞问题 | 2.2.2 | 2.3 | 5, 6 |
+| 14.1 | 变化率与极限思想 | 2.3 | 2.4 | 7, 8 |
+
+### 核心公式速查表
+
+**向量部分**：
+
+| 概念 | 公式 |
+|:---|:---|
+| 向量表示 | $`\mathbf{v} = x\mathbf{i} + y\mathbf{j} = (x, y)^\mathrm{T}`$ |
+| 模 | $`|\mathbf{v}| = \sqrt{x^2 + y^2}`$ |
+| 单位向量 | $`\hat{\mathbf{v}} = \dfrac{\mathbf{v}}{|\mathbf{v}|}`$ |
+| 位移 | $`\overrightarrow{AB} = \mathbf{r}_B - \mathbf{r}_A`$ |
+| 中点 | $`\mathbf{r}_M = \dfrac{\mathbf{r}_A + \mathbf{r}_B}{2}`$ |
+| 分点（$`AP:PB = m:n`$） | $`\mathbf{r}_P = \dfrac{n\mathbf{r}_A + m\mathbf{r}_B}{m+n}`$ |
+| 平行条件 | $`\mathbf{a} = k\mathbf{b}`$（存在标量 $`k`$） |
+| 垂直条件（点积） | $`\mathbf{u} \cdot \mathbf{v} = u_x v_x + u_y v_y = 0`$ |
+| 斜率法判垂直 | $`k_1 \cdot k_2 = -1`$ |
+| 速度合成 | $`\mathbf{v}_{A/C} = \mathbf{v}_{A/B} + \mathbf{v}_{B/C}`$ |
+| 速度分解 | $`\mathbf{v} = (v\cos\theta)\,\mathbf{i} + (v\sin\theta)\,\mathbf{j}`$ |
+| 匀速直线运动 | $`\mathbf{r}(t) = \mathbf{r}_0 + \mathbf{v}t`$ |
+| 相撞条件 | $`\mathbf{r}_1(t) = \mathbf{r}_2(t)`$ |
+
+**变化率部分**：
+
+| 概念 | 公式 |
+|:---|:---|
+| 导数定义 | $`f'(a) = \displaystyle\lim_{h \to 0} \dfrac{f(a + h) - f(a)}{h}`$ |
+| 幂法则 | $`\dfrac{d}{dx}(x^n) = n x^{n-1}`$ |
+| 速度（向量） | $`\mathbf{v}(t) = \dfrac{d\mathbf{r}}{dt} = \dfrac{dx}{dt}\mathbf{i} + \dfrac{dy}{dt}\mathbf{j}`$ |
+| 加速度（向量） | $`\mathbf{a}(t) = \dfrac{d\mathbf{v}}{dt} = \dfrac{d^2x}{dt^2}\mathbf{i} + \dfrac{d^2y}{dt^2}\mathbf{j}`$ |
+| 积分求速度 | $`\mathbf{v}(t) = \int \mathbf{a}(t) \, dt + \mathbf{v}_0`$ |
+| 积分求位置 | $`\mathbf{r}(t) = \int \mathbf{v}(t) \, dt + \mathbf{r}_0`$ |
+
+### 学习路线图
+
+从本章出发，后续章节将这样深化你的理解：
+
+- **第 5 章（微分）**：系统学习求导法则（链式法则、积法则、商法则），以及用导数求切线、法线和极值
+- **第 7 章（积分）**：学习微分的逆运算——积分，掌握从加速度求速度和位置的完整方法
+- **第 10 章（综合应用）**：将向量和微积分结合，解决完整的运动学问题
+
